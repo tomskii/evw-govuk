@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+        <div class="column-full">
+          <header>
+            <h1 class="heading-large"><span lang="en">What is your nationality?</span><span lang="ar">ما جنسيتك؟</span></h1>
+          </header>
+
+        <form action="/apply/nationality" method="POST" autocomplete="off" novalidate="true" spellcheck="false">
+
+<div id="nationality-group" class="form-group form-group">
+  <div role="" aria-required="true">
+    <legend class='form-label-bold'>
+      <span class="visuallyhidden"><span lang="en">What is your nationality?</span><span lang="ar">What is your nationality?</span></span>
+
+
+    </legend>
+    <div class="multiple-choice">
+      <input
+        type="radio"
+        name="nationality"
+        id="nationality-KWT"
+        value="KWT"
+        required="true">
+      <label for="nationality-KWT">
+        <span lang="en">Kuwaiti</span><span lang="ar">كويتي</span>
+      </label>
+    </div>
+    <div class="multiple-choice">
+      <input
+        type="radio"
+        name="nationality"
+        id="nationality-OMN"
+        value="OMN"
+        required="true">
+      <label for="nationality-OMN">
+        <span lang="en">Omani</span><span lang="ar">عُماني</span>
+      </label>
+    </div>
+    <div class="multiple-choice">
+      <input
+        type="radio"
+        name="nationality"
+        id="nationality-QAT"
+        value="QAT"
+        required="true">
+      <label for="nationality-QAT">
+        <span lang="en">Qatari</span><span lang="ar">قطري</span>
+      </label>
+    </div>
+    <div class="multiple-choice">
+      <input
+        type="radio"
+        name="nationality"
+        id="nationality-ARE"
+        value="ARE"
+        required="true">
+      <label for="nationality-ARE">
+        <span lang="en">Emirati</span><span lang="ar">إماراتي</span>
+      </label>
+    </div>
+    <div class="multiple-choice">
+      <input
+        type="radio"
+        name="nationality"
+        id="nationality-OTHER"
+        value="OTHER"
+        required="true">
+      <label for="nationality-OTHER">
+        <span lang="en">Other</span><span lang="ar">غيره</span>
+      </label>
+    </div>
+  </div>
+</div>
+
+
+<button class="button" id="continue"><span lang="en">Continue</span><span lang="ar">استمر</span></button>
+</form>
+</main>
+
+{% endblock %}
