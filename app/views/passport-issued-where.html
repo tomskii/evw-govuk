@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+    <div class="column-full">
+      <header>
+          <h1 class="heading-large"><span lang="en">Where was your passport issued?</span><span lang="ar">أين تم إصدار جواز سفرك؟</span></h1>
+        </header>
+
+        <form action="passport-birth" method="POST" autocomplete="off" novalidate="true" spellcheck="false">
+
+          <div id="passport-issue-place-group" class="form-group  form-group">
+          <label for="passport-issue-place" class="form-label-bold">
+
+            <span id="passport-issue-place-hint" class="form-hint"><span lang="en">Enter it exactly as it is written in your passport</span><span lang="ar">أدخل المعلومات بالضبط كما هي مكتوبة في جواز سفرك</span></span>
+
+          </label>
+          <input type="text" name="passport-issue-place" id="passport-issue-place" class="form-control" aria-required="true" value="Perspiciatis aliqui" maxlength="20" aria-describedby="passport-issue-place-hint">
+        </div>
+        <button class="button" id="continue"><span lang="en">Continue</span><span lang="ar">استمر</span></button>
+        </form>
+    </div>
+  </div>
+</main>
+{% endblock %}

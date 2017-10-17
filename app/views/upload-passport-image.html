@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+    <div class="column-full">
+
+    <header>
+      <h1 class="heading-large"><span lang="en">Upload a copy of your passport</span><span lang="ar">تحميل نسخة عن صفحة المعلومات الشخصية في جواز سفرك</span></h1>
+    </header>
+
+    <div class="passport-upload-guidance">
+      <div class="passport-upload-guidance-text" lang="en">
+          <h3 class="bold-small">Example image</h3>
+          <p>The image must be of the page showing your photo, name and other personal information.</p>
+      </div>
+      <div class="passport-upload-guidance-text" lang="ar">
+          <h3 class="bold-small">مثال عن صورة</h3>
+          <p>يجب ان تكون الصورة عن الصفحة التي تحتوي على صورتك واسمك ومعلومات شخصية أخرى.</p>
+      </div>
+      <img src="https://www.electronic-visa-waiver.service.gov.uk/public/images/sample-passports/omn.jpg" class="passport-upload-guidance-image">
+    </div>
+
+    <div class="passport-upload-requirements">
+    <div lang="en">
+        <h3 class="bold-small">Image requirements</h3>
+        <ul class="list list-bullet">
+            <li>whole page and no other objects</li>
+            <li>clear and in focus</li>
+            <li>no flash, shadows, creases or tears</li>
+            <li>JPG, JPEG or PNG format only</li>
+        </ul>
+    </div>
+    <div lang="ar">
+        <h3 class="bold-small">متطلبات الصورة</h3>
+        <ul class="list list-bullet">
+            <li>كامل الصفحة بدون أي شيء آخر</li>
+            <li>واضحة ونظيفة</li>
+            <li>بدون مومض او ثنيات او تمزقات</li>
+            <li>نمط JPG او JPEG أو PNG فقط.</li>
+        </ul>
+    </div>
+    </div>
+
+    <form action="loading-image" method="GET" autocomplete="off" novalidate="true" spellcheck="false">
+
+
+  <!--  <div id="passport-image-group" class="form-group">
+      <label for="passport-image" class="button visuallyhidden">
+        <span lang="en">Upload picture</span><span lang="ar">تحميل نسخة</span>
+      </label>
+      <input type="file" id="passport-image" name="passport-image">
+    </div>-->
+
+
+<button class="button" id="continue"><span lang="en">Upload picture</span><span lang="ar">تحميل نسخة</span></button>
+
+</form>
+
+    </div>
+        </div>
+</main>
+
+{% endblock %}

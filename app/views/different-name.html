@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK
+{% endblock %}
+
+{% block content %}
+<script>
+	$(document).ready(function(){
+    $(".hideanyOtherNamesDiv").click(function(){
+        $("#anyOtherNamesDiv").hide();
+    });
+    $(".showanyOtherNamesDiv").click(function(){
+        $("#enter-other-names-group").show();
+    });
+});
+</script>
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+        <div class="column-full">
+          <header>
+            <h1 class="heading-large"><span lang="en">Have you ever been known by a different name?</span><span lang="ar">هل كنت معروفا بأسم مختلف؟</span></h1>
+          </header>
+
+        <form action="other-nationalities" method="GET" autocomplete="off" novalidate="true" spellcheck="false">
+
+          <div id="other-names-group" class="form-group form-group">
+  <div role="" aria-required="true">
+    <div class="multiple-choice" data-target="enter-other-names-group">
+      <input
+        class="showanyOtherNamesDiv"
+        type="radio"
+        name="other-names"
+        id="other-names-Yes"
+        value="Yes"
+        required="true"
+         data-toggle="enter-other-names-group">
+      <label for="other-names-Yes">
+        <span lang="en">Yes</span><span lang="ar">نعم</span>
+      </label>
+    </div>
+    <div class="multiple-choice">
+      <input
+        class="hideanyOtherNamesDiv"
+        type="radio"
+        name="other-names"
+        id="other-names-No"
+        value="No"
+        required="true">
+      <label for="other-names-No">
+        <span lang="en">No</span><span lang="ar">لا</span>
+      </label>
+    </div>
+  </div>
+</div>
+
+
+<div id="enter-other-names-group" class="form-group  panel-indent narrow js-hidden">
+  <label for="enter-other-names" class="form-label-bold">
+    <span lang="en">Enter your previous names</span><span lang="ar">أدخل أي أسماء أخرى كنت معروفا بها.</span>
+
+
+  </label>
+  <textarea type="text" id="anyOtherNames" name="anyOtherNames" class="form-control smallertextarea" value="" maxlength="600"></textarea>
+  <!--<input
+    type="text"
+    name="enter-other-names"
+    id="enter-other-names"
+    class="form-control"
+    aria-required="true"
+maxlength="50">-->
+</div>
+<button class="button" id="continue"><span lang="en">Continue</span><span lang="ar">استمر</span></button>
+</form>
+</div>
+</div>
+</main>
+
+{% endblock %}

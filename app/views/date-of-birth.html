@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+    <div class="column-full">
+      <header>
+          <h1 class="heading-large"><span lang="en">What is your date of birth?</span><span lang="ar">ما جنسك؟</span></h1>
+        </header>
+
+        <form action="gender" method="POST"  autocomplete="off" novalidate="true" spellcheck="false">
+
+          <div id="date-of-birth-group" class="form-group">
+            <div class="form-date">
+              <p class="form-hint"><span lang="en">Enter what is written in your passport, for example, 22 3 1979</span><span lang="ar">أدخل تاريخ الولادة كما هو مكتوبا في جواز سفرك على سبيل المثال، 1979 3 22</span></p>
+              <div id="date-of-birth-day-group" class="form-group ">
+            <label for="date-of-birth-day" class="form-label-bold">
+              <span lang="en">Day</span><span lang="ar">اليوم</span>
+
+
+            </label>
+            <input
+              type="text"
+              name="date-of-birth-day"
+              id="date-of-birth-day"
+              class="form-control"
+              aria-required="false"
+               min="1"
+               max="31"
+               maxlength="2"
+               pattern="[0-9]*"
+               aria-describedby="date-of-birth-hint">
+          </div>
+
+          <div id="date-of-birth-month-group" class="form-group ">
+            <label for="date-of-birth-month" class="form-label-bold">
+              <span lang="en">Month</span><span lang="ar">الشهر</span>
+            </label>
+            <input
+              type="text"
+              name="date-of-birth-month"
+              id="date-of-birth-month"
+              class="form-control"
+              aria-required="false"
+               min="1"
+               max="12"
+               maxlength="2"
+               pattern="[0-9]*"
+               aria-describedby="date-of-birth-hint">
+          </div>
+
+          <div id="date-of-birth-year-group" class="form-group ">
+            <label for="date-of-birth-year" class="form-label-bold">
+              <span lang="en">Year</span><span lang="ar">السنة</span>
+            </label>
+            <input
+              type="text"
+              name="date-of-birth-year"
+              id="date-of-birth-year"
+              class="form-control"
+              aria-required="false"
+               maxlength="4"
+               pattern="[0-9]*"
+               aria-describedby="date-of-birth-hint">
+          </div>
+            </div>
+          </div>
+        <button class="button" id="continue"><span lang="en">Continue</span><span lang="ar">استمر</span></button>
+        </form>
+    </div>
+  </div>
+</main>
+{% endblock %}

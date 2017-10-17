@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+    <div class="column-full">
+      <header>
+          <h1 class="heading-large"><span lang="en">What is your passport number?</span><span lang="ar">ما رقم جواز سفرك؟</span></h1>
+        </header>
+
+        <form action="passport-issued-when" method="POST"  autocomplete="off" novalidate="true" spellcheck="false">
+        <div id="name-group" class="form-group  form-group">
+          <label for="name" class="form-label">
+            <span lang="en">Use the number on your passport photo page, include any zeros at the start for example 00324081</span><span lang="ar">استخدم الرقم الموجود في صفحة صورتك في جواز السفر بما فيه أي أصفار بادئة. مثل 00324081</span>
+        </label>
+          <input type="text" name="passportnumber" id="passportnumber" class="form-control" aria-required="true" maxlength="50">
+        </div>
+
+
+
+        <button class="button" id="continue"><span lang="en">Continue</span><span lang="ar">استمر</span></button>
+        </form>
+    </div>
+  </div>
+</main>
+{% endblock %}

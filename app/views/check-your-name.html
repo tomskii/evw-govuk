@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+    <div class="column-full">
+      <header>
+          <h1 class="heading-large"><span lang="en">Check your name against your passport</span><span lang="ar">قارن اسمك مع جواز سفرك</span></h1>
+        </header>
+
+        <form action="passport-number" method="POST"  autocomplete="off" novalidate="true" spellcheck="false">
+
+<div id="check-name-group" class="form-group  form-group check-field">
+  <label for="check-name" class="form-label-bold">
+  </label>
+  <input type="text" name="check-name" id="check-name" class="form-control" aria-required="true" value="{{ data['name'] }}" maxlength="50">
+</div>
+
+<div class="check-your-name-list" lang="en">
+  <p class="heading-small">Check you have included:</p>
+  <ul class="list list-bullet">
+    <li>all names and initials</li>
+    <li>any punctuation, eg dashes or apostrophes</li>
+  </ul>
+</div>
+
+<div class="check-your-name-list" lang="ar">
+  <p class="heading-small">تأكد انك شملت:</p>
+  <ul class="list list-bullet">
+    <li>كل الأسماء والأحرف</li>
+    <li>كل علامات الترقيم والتشكيل مثل الشرطات والفواصل</li>
+  </ul>
+</div>
+
+<button class="button" id="continue"><span lang="en">Yes - my name is correct</span><span lang="ar">نعم - اسمي صحيح</span></button>
+
+
+<p class="split-spans"><span lang="en">If your name is wrong, just change it above</span><span lang="ar">إذا كان اسمك غير صحيح، فغيره بالأعلى</span></p>
+
+</form>
+    </div>
+  </div>
+</main>
+{% endblock %}

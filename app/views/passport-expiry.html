@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+    <div class="column-full">
+      <header>
+          <h1 class="heading-large"><span lang="en">When does your passport expire?</span><span lang="ar">ما تاريخ انتهاء جواز سفرك؟</span></h1>
+        </header>
+
+        <div id="passport-expiry-date-group" class="form-group">
+
+  <div class="form-date">
+    <p class="form-hint"><span lang="en">For example, 25 3 2025</span><span lang="ar">على سبيل المثال، 2025 3 25</span></p>
+    <div id="passport-expiry-date-day-group" class="form-group ">
+  <label for="passport-expiry-date-day" class="form-label-bold">
+    <span lang="en">Day</span><span lang="ar">اليوم</span>
+
+
+  </label>
+  <input
+    type="text"
+    name="passport-expiry-date-day"
+    id="passport-expiry-date-day"
+    class="form-control"
+    aria-required="false"
+     value="14"
+     min="1"
+     max="31"
+     maxlength="2"
+     pattern="[0-9]*"
+     aria-describedby="passport-expiry-date-hint"
+
+
+  >
+</div>
+
+<div id="passport-expiry-date-month-group" class="form-group ">
+  <label for="passport-expiry-date-month" class="form-label-bold">
+    <span lang="en">Month</span><span lang="ar">الشهر</span>
+
+
+  </label>
+  <input
+    type="text"
+    name="passport-expiry-date-month"
+    id="passport-expiry-date-month"
+    class="form-control"
+    aria-required="false"
+     value="10"
+     min="1"
+     max="12"
+     maxlength="2"
+     pattern="[0-9]*"
+     aria-describedby="passport-expiry-date-hint"
+
+
+  >
+</div>
+
+<div id="passport-expiry-date-year-group" class="form-group ">
+  <label for="passport-expiry-date-year" class="form-label-bold">
+    <span lang="en">Year</span><span lang="ar">السنة</span>
+
+
+  </label>
+  <input
+    type="text"
+    name="passport-expiry-date-year"
+    id="passport-expiry-date-year"
+    class="form-control"
+    aria-required="false"
+     value="2025"
+
+
+     maxlength="4"
+     pattern="[0-9]*"
+     aria-describedby="passport-expiry-date-hint"
+
+
+  >
+</div>
+
+  </div>
+</div>
+
+
+
+        <button class="button" id="continue"><span lang="en">Continue</span><span lang="ar">استمر</span></button>
+        </form>
+    </div>
+  </div>
+</main>
+{% endblock %}

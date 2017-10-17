@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+      <div class="column-full">
+
+      <header>
+        <h1 class="heading-large"><span lang="en">Is your passport image clear?</span><span lang="ar">هل صورة جواز سفرك واضحة؟</span></h1>
+      </header>
+
+      <img src="https://www.electronic-visa-waiver.service.gov.uk/public/images/sample-passports/omn.jpg" class="check-passport-image" id="passportImagePreview">
+
+      <div class="passport-upload-requirements">
+        <div lang="en">
+          <h3>Check that:</h3>
+          <ul class="list list-bullet">
+            <li>the whole page is visible</li>
+            <li>you can read all the information</li>
+            <li>there are no flashes, shadows, creases or tears</li>
+          </ul>
+        </div>
+        <div lang="ar">
+          <h3>تأكد من:</h3>
+          <ul class="list list-bullet">
+            <li>ان كل الصفحة ظاهرة</li>
+            <li>يمكنك قراءة كل المعلومات</li>
+            <li>لا يوجد أي لمعان او ظلال او ثنيات او تمزقات</li>
+          </ul>
+        </div>
+      </div>
+
+      <form action="name" method="POST"  autocomplete="off" novalidate="true" spellcheck="false">
+        <div id="check-passport-image-group" class="form-group form-group">
+        <div role="" aria-required="true">
+          <legend class='form-label-bold'>
+            <span class="visuallyhidden"><span lang="en">Is your passport image clear?</span><span lang="ar">هل صورة جواز سفرك واضحة؟</span></span>
+          </legend>
+          <div class="multiple-choice">
+            <input
+              type="radio"
+              name="check-passport-image"
+              id="check-passport-image-Yes"
+              value="Yes"
+              required="true">
+            <label for="check-passport-image-Yes">
+              <span lang="en">Yes, my image is clear</span><span lang="ar">نعم، صورتي واضحة</span>
+            </label>
+          </div>
+          <div class="multiple-choice">
+            <input
+              type="radio"
+              name="check-passport-image"
+              id="check-passport-image-No"
+              value="No"
+              required="true">
+            <label for="check-passport-image-No">
+              <span lang="en">No, I want to change my image</span><span lang="ar">لا، أريد أن أغير الصورة</span>
+            </label>
+          </div>
+        </div>
+        </div>
+
+        <button class="button" id="continue"><span lang="en">Continue</span><span lang="ar">استمر</span></button>
+        </form>
+
+      </div>
+    </div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+    <div class="column-full">
+      <header>
+          <h1 class="heading-large"><span lang="en">What is your full name in English as written in your passport?</span><span lang="ar">اكتب اسمك بالكامل و باللغة الإنجليزية، كما هو مكتوبا في جواز سفرك.</span></h1>
+        </header>
+
+        <form action="check-your-name" method="POST"  autocomplete="off" novalidate="true" spellcheck="false">
+        <div id="name-group" class="form-group  form-group">
+          
+          <input type="text" name="name" id="name" class="form-control" aria-required="true" maxlength="50">
+        </div>
+
+        <p class="icon-important"><span lang="en">You will not be able to travel to the UK if your name does not match what is in your passport. Include all initials and any punctuation, for example dashes (-) or apostrophes (').</span><span lang="ar">لن يسمح لك بالسفر للمملكة المتحدة إذا لم يتطابق اسمك مع ما هو مكتوبا في جواز سفرك. أشمل كل الأحرف وأي علامات ترقيم مثل الشحطة (-) أو الفاصلة (‘).</span></p>
+
+        <button class="button" id="continue"><span lang="en">Continue</span><span lang="ar">استمر</span></button>
+        </form>
+    </div>
+  </div>
+</main>
+{% endblock %}
