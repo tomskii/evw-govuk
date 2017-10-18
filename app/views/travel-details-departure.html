@@ -1,0 +1,676 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+        <div class="column-full">
+          <header>
+          <h1 class="heading-large"><span lang="en">Do you have your travel details for your departure from the UK?</span><span lang="ar">هل معك معلومات مغادرتك من المملكة المتحدة؟</span></h1>
+        </header>
+
+        <form action="more-than-one-trip" method="POST"  autocomplete="off" novalidate="true" spellcheck="false">
+
+
+
+<div id="know-departure-details-group" class="form-group form-group">
+  <div role="" aria-required="true">
+
+    <div class="multiple-choice" data-target="know-departure-details-yes-div">
+      <input
+        type="radio"
+        name="know-departure-details"
+        id="know-departure-details-Yes"
+        value="Yes"
+        required="true">
+      <label for="know-departure-details-Yes">
+        <span lang="en">Yes</span><span lang="ar">نعم</span>
+      </label>
+    </div>
+    <div class="multiple-choice" data-target="uk-duration-group">
+      <input
+        type="radio"
+        name="know-departure-details"
+        id="know-departure-details-No"
+        value="No"
+        required="true">
+      <label for="know-departure-details-No">
+        <span lang="en">No</span><span lang="ar">لا</span>
+      </label>
+    </div>
+  </div>
+</div>
+
+
+<div id="uk-duration-group" class="form-group panel-indent narrow js-hidden">
+  <div role="" aria-required="true">
+    <legend class='form-label-bold'>
+      <span><span lang="en">How long are you staying in the UK for?</span><span lang="ar">كم ستظل بالمملكة المتحدة؟</span></span>
+
+
+    </legend>
+    <div class="multiple-choice">
+      <input
+        type="radio"
+        name="uk-duration"
+        id="uk-duration-Less than 1 month"
+        value="Less than 1 month"
+        required="true"
+
+
+
+
+      >
+      <label for="uk-duration-Less than 1 month">
+        <span lang="en">Less than 1 month</span><span lang="ar">أقل من شهر</span>
+      </label>
+    </div>
+    <div class="multiple-choice">
+      <input
+        type="radio"
+        name="uk-duration"
+        id="uk-duration-1 to 3 months"
+        value="1 to 3 months"
+        required="true">
+      <label for="uk-duration-1 to 3 months">
+        <span lang="en">1 to 3 months</span><span lang="ar">1 الى 3 أشهر</span>
+      </label>
+    </div>
+    <div class="multiple-choice">
+      <input
+        type="radio"
+        name="uk-duration"
+        id="uk-duration-3 to 6 months"
+        value="3 to 6 months"
+        required="true">
+      <label for="uk-duration-3 to 6 months">
+        <span lang="en">3 to 6 months</span><span lang="ar">3 الى 6 أشهر</span>
+      </label>
+    </div>
+  </div>
+</div>
+
+
+<div id="know-departure-details-yes-div" class="panel-indent form-group narrow js-hidden">
+  <div id="uk-departure-travel-number-group" class="form-group ">
+  <label for="uk-departure-travel-number" class="form-label-bold">
+    <span lang="en">Enter the flight number, train number or boat name for your departure from the UK</span><span lang="ar">أدخل رقم رحلة الطيران أو القطار أو السفينة التي ستغادر بها المملكة المتحدة.</span>
+    <span id="uk-departure-travel-number-hint" class="form-hint"><span lang="en">The details will be on your travel documents</span><span lang="ar">ستكون المعلومات في جدول السفر</span></span>
+  </label>
+  <input
+    type="text"
+    name="uk-departure-travel-number"
+    id="uk-departure-travel-number"
+    class="form-control"
+    aria-required="true"
+    maxlength="30"
+    aria-describedby="uk-departure-travel-number-hint">
+</div>
+
+  <hr class="keyline">
+
+  <div id="uk-date-of-departure-group" class="form-group">
+    <legend class="form-label-bold"><span lang="en">What date will you be departing the UK?</span><span lang="ar">ما تاريخ مغادرتك من المملكة المتحدة؟</span></legend>
+    <div class="form-date">
+      <p class="form-hint"><span lang="en">For example, 30 8 2016</span><span lang="ar">مثال: 2016 8 30</span></p>
+      <div id="uk-date-of-departure-day-group" class="form-group ">
+  <label for="uk-date-of-departure-day" class="form-label-bold">
+    <span lang="en">Day</span><span lang="ar">ليوم</span>
+  </label>
+  <input
+    type="text"
+    name="uk-date-of-departure-day"
+    id="uk-date-of-departure-day"
+    class="form-control"
+    aria-required="false"
+     min="1"
+     max="31"
+     maxlength="2"
+     pattern="[0-9]*"
+     aria-describedby="uk-date-of-departure-hint">
+</div>
+
+<div id="uk-date-of-departure-month-group" class="form-group ">
+  <label for="uk-date-of-departure-month" class="form-label-bold">
+    <span lang="en">Month</span><span lang="ar">الشهر</span>
+  </label>
+  <input
+    type="text"
+    name="uk-date-of-departure-month"
+    id="uk-date-of-departure-month"
+    class="form-control"
+    aria-required="false"
+   min="1"
+   max="12"
+   maxlength="2"
+   pattern="[0-9]*"
+   aria-describedby="uk-date-of-departure-hint">
+</div>
+
+<div id="uk-date-of-departure-year-group" class="form-group ">
+  <label for="uk-date-of-departure-year" class="form-label-bold">
+    <span lang="en">Year</span><span lang="ar">لسنة</span>
+  </label>
+  <input
+    type="text"
+    name="uk-date-of-departure-year"
+    id="uk-date-of-departure-year"
+    class="form-control"
+    aria-required="false"
+    maxlength="4"
+    pattern="[0-9]*"
+    aria-describedby="uk-date-of-departure-hint">
+</div>
+    </div>
+  </div>
+  <hr class="keyline">
+
+  <div id="uk-port-of-departure-group" class="form-group">
+  <label for="uk-port-of-departure" class="form-label-bold">
+    <span lang="en">What airport, train station or port are you leaving the UK from?</span><span lang="ar">من أي مطار او محطة او ميناء ستغادر المملكة المتحدة؟</span>
+  </label>
+  <select id="uk-port-of-departure" data-typeahead-maxlength="95" class="form-control typeahead" name="uk-port-of-departure" aria-required="true">
+    <option value="" ></option>
+    <option value="BBP_Bembridge Airport" >Bembridge Airport</option>
+    <option value="BBS_Blackbush Airport" >Blackbush Airport</option>
+    <option value="BEB_Benbecula Airport" >Benbecula Airport</option>
+    <option value="BEQ_Honington Airport" >Honington Airport</option>
+    <option value="BEX_Royal Air Force Station" >Royal Air Force Station</option>
+    <option value="BFS_Belfast International Airport" >Belfast International Airport</option>
+    <option value="BHD_George Best Belfast City Airport" >George Best Belfast City Airport</option>
+    <option value="BHX_Birmingham International Airport" >Birmingham International Airport</option>
+    <option value="BLK_Blackpool Airport" >Blackpool Airport</option>
+    <option value="BOH_Bournemouth Airport" >Bournemouth Airport</option>
+    <option value="BOL_Bally Kelly Airport" >Bally Kelly Airport</option>
+    <option value="BQH_Biggin Hill Airport" >Biggin Hill Airport</option>
+    <option value="BRS_Bristol Airport" >Bristol Airport</option>
+    <option value="BRR_North Bay Airport" >North Bay Airport</option>
+    <option value="BSH_Brighton Airport" >Brighton Airport</option>
+    <option value="BWF_Walney Island Airport" >Walney Island Airport</option>
+    <option value="BWY_Bentwaters Street Airport" >Bentwaters Street Airport</option>
+    <option value="BZZ_RAF Brize Norton" >RAF Brize Norton</option>
+    <option value="CAL_Machrihanish Airport" >Machrihanish Airport</option>
+    <option value="CAX_Carlisle Airport" >Carlisle Airport</option>
+    <option value="CBG_Cambridge Airport" >Cambridge Airport</option>
+    <option value="CEG_Hawarden Airport" >Hawarden Airport</option>
+    <option value="COL_Coll Island Airport" >Coll Island Airport</option>
+    <option value="CRN_Cromarty Airport" >Cromarty Airport</option>
+    <option value="CSA_Colonsay Island Airport" >Colonsay Island Airport</option>
+    <option value="CVT_Coventry Airport" >Coventry Airport</option>
+    <option value="CWL_Cardiff Airport" >Cardiff Airport</option>
+    <option value="DND_Dundee Airport" >Dundee Airport</option>
+    <option value="DOC_Dornoch Airport" >Dornoch Airport</option>
+    <option value="DSA_Doncaster Sheffield Airport" >Doncaster Sheffield Airport</option>
+    <option value="EDI_Edinburgh Airport" >Edinburgh Airport</option>
+    <option value="EMA_East Midlands Airport" >East Midlands Airport</option>
+    <option value="ENK_Saint Angelo Airport" >Saint Angelo Airport</option>
+    <option value="EOI_Eday Airport" >Eday Airport</option>
+    <option value="ESH_Shoreham Airport" >Shoreham Airport</option>
+    <option value="EWY_Greenham Royal Air Force" >Greenham Royal Air Force</option>
+    <option value="EXT_Exeter International Airport" >Exeter International Airport</option>
+    <option value="FAB_Farnborough Airport" >Farnborough Airport</option>
+    <option value="FEA_Fetlar Airport" >Fetlar Airport</option>
+    <option value="FFD_Royal Air Force Station" >Royal Air Force Station</option>
+    <option value="FIE_Fair Isle Airport" >Fair Isle Airport</option>
+    <option value="FKH_Sculthorp Royal Air Force" >Sculthorp Royal Air Force</option>
+    <option value="FLH_Flotta Airport" >Flotta Airport</option>
+    <option value="FOA_Foula Airport" >Foula Airport</option>
+    <option value="FSS_Kinloss Airport" >Kinloss Airport</option>
+    <option value="FWM_Fort WilliamHeliport" >Fort WilliamHeliport</option>
+    <option value="FZO_Filton Airport" >Filton Airport</option>
+    <option value="GCI_Guernsey Airport" >Guernsey Airport</option>
+    <option value="GLA_Glasgow International Airport" >Glasgow International Airport</option>
+    <option value="GLO_Gloucestershire Airport" >Gloucestershire Airport</option>
+    <option value="GQJ_Machrihanish Airport" >Machrihanish Airport</option>
+    <option value="GSY_Binbrook Airport" >Binbrook Airport</option>
+    <option value="HAW_Haverfordwest Airport" >Haverfordwest Airport</option>
+    <option value="HLY_Holyhead Airport" >Holyhead Airport</option>
+    <option value="HOY_Hoy Island Airport" >Hoy Island Airport</option>
+    <option value="HRT_Linton-On-Ouse RAF" >Linton-On-Ouse RAF</option>
+    <option value="HTF_Hatfield Airport" >Hatfield Airport</option>
+    <option value="HUY_Humberside Airport" >Humberside Airport</option>
+    <option value="HYC_High Wycombe Airport" >High Wycombe Airport</option>
+    <option value="ILY_Glenegedale Airport" >Glenegedale Airport</option>
+    <option value="INV_Inverness Airport" >Inverness Airport</option>
+    <option value="IOM_Isle of Man Airport" >Isle of Man Airport</option>
+    <option value="IPW_Ipswich Airport" >Ipswich Airport</option>
+    <option value="ISC_Isles of Scilly Airport" >Isles of Scilly Airport</option>
+    <option value="JER_Jersey Airport" >Jersey Airport</option>
+    <option value="KNF_Marham Royal Air Force" >Marham Royal Air Force</option>
+    <option value="KOI_Kirkwall Airport" >Kirkwall Airport</option>
+    <option value="KRH_Redhill" >Redhill</option>
+    <option value="KYN_Milton Keynes Central Station" >Milton Keynes Central Station</option>
+    <option value="LBA_Leeds Bradford International Airport" >Leeds Bradford International Airport</option>
+    <option value="LCY_London City Airport" >London City Airport</option>
+    <option value="LDY_City of Derry Airport" >City of Derry Airport</option>
+    <option value="LEQ_Lands End Airport" >Lands End Airport</option>
+    <option value="LGW_London Gatwick Airport" >London Gatwick Airport</option>
+    <option value="LHR_London Heathrow Airport" >London Heathrow Airport</option>
+    <option value="LKZ_Lakenheath RAF" >Lakenheath RAF</option>
+    <option value="LMO_Royal Air Force Station" >Royal Air Force Station</option>
+    <option value="LPH_Lochgilphead Heliport" >Lochgilphead Heliport</option>
+    <option value="LPL_Liverpool John Lennon Airport" >Liverpool John Lennon Airport</option>
+    <option value="LSI_Sumburgh Airport" >Sumburgh Airport</option>
+    <option value="LTN_London Luton Airport" >London Luton Airport</option>
+    <option value="LWK_Lerwick/Tingwall Airport" >Lerwick/Tingwall Airport</option>
+    <option value="LYE_Royal Air Force Station" >Royal Air Force Station</option>
+    <option value="LYX_Lydd International Airport" >Lydd International Airport</option>
+    <option value="MAN_Manchester Airport" >Manchester Airport</option>
+    <option value="MHZ_Mildenhall Airport" >Mildenhall Airport</option>
+    <option value="MME_Durham Tees Valley Airport" >Durham Tees Valley Airport</option>
+    <option value="MSE_Manston Airport" >Manston Airport</option>
+    <option value="NCL_Newcastle International Airport" >Newcastle International Airport</option>
+    <option value="NDY_Sanday Airport" >Sanday Airport</option>
+    <option value="NHT_Northolt Airport" >Northolt Airport</option>
+    <option value="NQT_Nottingham Airport" >Nottingham Airport</option>
+    <option value="NQY_Newquay Cornwall Airport" >Newquay Cornwall Airport</option>
+    <option value="NRL_North Ronaldsay Airport" >North Ronaldsay Airport</option>
+    <option value="NWI_Norwich International Airport" >Norwich International Airport</option>
+    <option value="OBN_Connel Airport" >Connel Airport</option>
+    <option value="ODH_Royal Air Force Station" >Royal Air Force Station</option>
+    <option value="OHP_Oban Heliport" >Oban Heliport</option>
+    <option value="OKH_Cottesmor Royal Air Force" >Cottesmor Royal Air Force</option>
+    <option value="ORM_Northampton Airport" >Northampton Airport</option>
+    <option value="OUK_Outer Skerries Airport" >Outer Skerries Airport</option>
+    <option value="OXF_London Oxford Airport" >London Oxford Airport</option>
+    <option value="PIK_Glasgow Prestwick Airport" >Glasgow Prestwick Airport</option>
+    <option value="PLH_Plymouth Airport" >Plymouth Airport</option>
+    <option value="PME_Portsmouth Airport" >Portsmouth Airport</option>
+    <option value="PPW_Papa Westray Airport" >Papa Westray Airport</option>
+    <option value="PSL_Perth International Airport" >Perth International Airport</option>
+    <option value="PSV_Papa Stour Airport" >Papa Stour Airport</option>
+    <option value="PZE_Penzance Heliport" >Penzance Heliport</option>
+    <option value="QLA_Lasham Airfield" >Lasham Airfield</option>
+    <option value="QUG_Goodwood" >Goodwood</option>
+    <option value="RAY_Rothsay Heliport" >Rothsay Heliport</option>
+    <option value="RCS_Rochester Airport" >Rochester Airport</option>
+    <option value="SCS_Scatsta Airport" >Scatsta Airport</option>
+    <option value="SEN_London Southend Airport" >London Southend Airport</option>
+    <option value="SKL_Broadford Airport" >Broadford Airport</option>
+    <option value="SOU_Southampton Airport" >Southampton Airport</option>
+    <option value="SOY_Stronsay Airport" >Stronsay Airport</option>
+    <option value="SQZ_Royal Air Force Station" >Royal Air Force Station</option>
+    <option value="STN_Stansted Airport" >Stansted Airport</option>
+    <option value="SWI_Swindon Airport" >Swindon Airport</option>
+    <option value="SWS_Swansea Airport" >Swansea Airport</option>
+    <option value="SYY_Stornoway Airport" >Stornoway Airport</option>
+    <option value="SZD_Sheffield City Airport" >Sheffield City Airport</option>
+    <option value="TRE_Tiree Airport" >Tiree Airport</option>
+    <option value="TSO_Tresco Airport" >Tresco Airport</option>
+    <option value="TTK_Tottenham Hale Station" >Tottenham Hale Station</option>
+    <option value="UHF_Upper Heyford RAF Station" >Upper Heyford RAF Station</option>
+    <option value="ULL_Mull Airport" >Mull Airport</option>
+    <option value="UNT_Unst Airport" >Unst Airport</option>
+    <option value="UPV_Upavon Airport" >Upavon Airport</option>
+    <option value="WEM_West Malling Airport" >West Malling Airport</option>
+    <option value="WFD_Manchester Woodford Airport" >Manchester Woodford Airport</option>
+    <option value="WHS_Whalsay Airport" >Whalsay Airport</option>
+    <option value="WIC_Wick Airport" >Wick Airport</option>
+    <option value="WOB_Woodbridge RAF" >Woodbridge RAF</option>
+    <option value="WRY_Westray Airport" >Westray Airport</option>
+    <option value="WTN_Royal Air Force Station" >Royal Air Force Station</option>
+    <option value="WXF_Wether Field Royal Air Force" >Wether Field Royal Air Force</option>
+    <option value="YEO_Yeovilton Airport" >Yeovilton Airport</option>
+    <option value="Derby" >Derby</option>
+    <option value="Leicester" >Leicester</option>
+    <option value="Tatenhill" >Tatenhill</option>
+    <option value="Wolverhampton Halfpenny Green Airport" >Wolverhampton Halfpenny Green Airport</option>
+    <option value="Kemble" >Kemble</option>
+    <option value="Shobdon" >Shobdon</option>
+    <option value="Turweston" >Turweston</option>
+    <option value="Wellesbourne Mountford Airport" >Wellesbourne Mountford Airport</option>
+    <option value="Newtownards" >Newtownards</option>
+    <option value="Boscombe Down" >Boscombe Down</option>
+    <option value="Netheravon Army" >Netheravon Army</option>
+    <option value="Predannack Airport" >Predannack Airport</option>
+    <option value="Portland Navy" >Portland Navy</option>
+    <option value="Culdrose Navy" >Culdrose Navy</option>
+    <option value="Merryfield Navy" >Merryfield Navy</option>
+    <option value="St Athan Ab" >St Athan Ab</option>
+    <option value="City Airport Manchester" >City Airport Manchester</option>
+    <option value="Sandtoft" >Sandtoft</option>
+    <option value="Sherburn-In-Elmet" >Sherburn-In-Elmet</option>
+    <option value="Caernarfon" >Caernarfon</option>
+    <option value="Fenland" >Fenland</option>
+    <option value="Birkdale Sands Airport" >Birkdale Sands Airport</option>
+    <option value="Sturgate" >Sturgate</option>
+    <option value="Sleap" >Sleap</option>
+    <option value="Welshpool" >Welshpool</option>
+    <option value="Pembrey" >Pembrey</option>
+    <option value="Sanday" >Sanday</option>
+    <option value="Westland" >Westland</option>
+    <option value="Sandown" >Sandown</option>
+    <option value="Thruxton" >Thruxton</option>
+    <option value="Popham" >Popham</option>
+    <option value="Henstridge" >Henstridge</option>
+    <option value="Eaglescott" >Eaglescott</option>
+    <option value="Truro Airport" >Truro Airport</option>
+    <option value="Compton-Abbas" >Compton-Abbas</option>
+    <option value="Headcorn" >Headcorn</option>
+    <option value="Chalgrove" >Chalgrove</option>
+    <option value="White Waltham" >White Waltham</option>
+    <option value="Old Sarum" >Old Sarum</option>
+    <option value="Fowlmere" >Fowlmere</option>
+    <option value="Little Gransden" >Little Gransden</option>
+    <option value="Bodmin Airfield" >Bodmin Airfield</option>
+    <option value="Denham" >Denham</option>
+    <option value="Panshanger" >Panshanger</option>
+    <option value="Warton" >Warton</option>
+    <option value="Full Sutton" >Full Sutton</option>
+    <option value="Wickenby" >Wickenby</option>
+    <option value="Linley Hill" >Linley Hill</option>
+    <option value="Llanbedr Mod Pe" >Llanbedr Mod Pe</option>
+    <option value="Ternhill Ab" >Ternhill Ab</option>
+    <option value="Hucknall" >Hucknall</option>
+    <option value="Brough" >Brough</option>
+    <option value="Gamston" >Gamston</option>
+    <option value="Netherthorpe" >Netherthorpe</option>
+    <option value="Mona Ab" >Mona Ab</option>
+    <option value="Shawbury Ab" >Shawbury Ab</option>
+    <option value="VLY_Anglesey Airport" >Anglesey Airport</option>
+    <option value="RAF Woodvale" >RAF Woodvale</option>
+    <option value="West Freugh Mod Pe" >West Freugh Mod Pe</option>
+    <option value="Cumbernauld" >Cumbernauld</option>
+    <option value="Fife Airport" >Fife Airport</option>
+    <option value="Castle Mill" >Castle Mill</option>
+    <option value="North Denes" >North Denes</option>
+    <option value="Conington" >Conington</option>
+    <option value="Stapleford Aerodrome" >Stapleford Aerodrome</option>
+    <option value="Seething" >Seething</option>
+    <option value="Andrewsfield Airport" >Andrewsfield Airport</option>
+    <option value="Beccles" >Beccles</option>
+    <option value="Bourn" >Bourn</option>
+    <option value="Crowfield" >Crowfield</option>
+    <option value="Sibson" >Sibson</option>
+    <option value="Elstree" >Elstree</option>
+    <option value="Dunkeswell" >Dunkeswell</option>
+    <option value="Oaksey Park" >Oaksey Park</option>
+    <option value="Aberporth Mod Pe" >Aberporth Mod Pe</option>
+    <option value="Colerne" >Colerne</option>
+    <option value="Clacton" >Clacton</option>
+    <option value="Earls Colne" >Earls Colne</option>
+    <option value="Elmsett" >Elmsett</option>
+    <option value="Duxford" >Duxford</option>
+    <option value="Old Buckenham" >Old Buckenham</option>
+    <option value="North Weald Airport" >North Weald Airport</option>
+    <option value="Booker" >Booker</option>
+    <option value="Cranfield" >Cranfield</option>
+    <option value="Dunsfold" >Dunsfold</option>
+    <option value="Fairoaks Airport" >Fairoaks Airport</option>
+    <option value="Perranporth Airfield" >Perranporth Airfield</option>
+    <option value="Cosford Ab" >Cosford Ab</option>
+    <option value="Henlow Ab" >Henlow Ab</option>
+    <option value="Halton Ab" >Halton Ab</option>
+    <option value="Wattisham Army" >Wattisham Army</option>
+    <option value="Middle Wallop Army" >Middle Wallop Army</option>
+    <option value="Topcliffe Ab" >Topcliffe Ab</option>
+    <option value="CLF_Coltishall Ab" >Coltishall Ab</option>
+    <option value="Cranwell Ab" >Cranwell Ab</option>
+    <option value="Barkston Heath Ab" >Barkston Heath Ab</option>
+    <option value="Marham Ab" >Marham Ab</option>
+    <option value="Coningsby Ab" >Coningsby Ab</option>
+    <option value="Dishforth Ab" >Dishforth Ab</option>
+    <option value="Leeming Ab" >Leeming Ab</option>
+    <option value="Church Fenton Ab" >Church Fenton Ab</option>
+    <option value="Cottesmore Ab" >Cottesmore Ab</option>
+    <option value="Newton Ab" >Newton Ab</option>
+    <option value="Wittering Ab" >Wittering Ab</option>
+    <option value="ABZ_Aberdeen International Airport" >Aberdeen International Airport</option>
+    <option value="ACI_Alderney Airport" >Alderney Airport</option>
+    <option value="ADX_Leuchars Airport" >Leuchars Airport</option>
+    <option value="AYH_Royal Air Force Station" >Royal Air Force Station</option>
+    <option value="TRT_Althorpe" >Althorpe</option>
+    <option value="BLY_Amble" >Amble</option>
+    <option value="WAT_Appledore" >Appledore</option>
+    <option value="AVO_AVONMOUTH" >AVONMOUTH</option>
+    <option value="LON_Baltic Wharf, Rochford" >Baltic Wharf, Rochford</option>
+    <option value="BAR_BARROW-IN-FURNESS" >BARROW-IN-FURNESS</option>
+    <option value="IMM_Barrow-on-Humber" >Barrow-on-Humber</option>
+    <option value="CDF_Barry DocK" >Barry DocK</option>
+    <option value="IMM_Barton-on-Humber" >Barton-on-Humber</option>
+    <option value="TRT_Beckingham" >Beckingham</option>
+    <option value="BLY_Berwick" >Berwick</option>
+    <option value="WAT_Bideford" >Bideford</option>
+    <option value="LIV_Birkenhead" >Birkenhead</option>
+    <option value="BLY_BLYTH" >BLYTH</option>
+    <option value="BOS_BOSTON" >BOSTON</option>
+    <option value="WAT_Bridgwater" >Bridgwater</option>
+    <option value="HUL_Bridlington" >Bridlington</option>
+    <option value="WEY_Bridport" >Bridport</option>
+    <option value="COL_Brightlingsea" >Brightlingsea</option>
+    <option value="PTB_Briton Ferry" >Briton Ferry</option>
+    <option value="TNM_Brixham" >Brixham</option>
+    <option value="COL_Burnham-on-Crouch" >Burnham-on-Crouch</option>
+    <option value="TRT_Burton Stather" >Burton Stather</option>
+    <option value="LLA_Caernarfon" >Caernarfon</option>
+    <option value="CDF_CARDIFF" >CARDIFF</option>
+    <option value="FOY_Charlestown" >Charlestown</option>
+    <option value="NPT_Chepstow" >Chepstow</option>
+    <option value="COL_COLCHESTER" >COLCHESTER</option>
+    <option value="COW_COWES" >COWES</option>
+    <option value="TNM_Dartmouth" >Dartmouth</option>
+    <option value="DOV_DOVER" >DOVER</option>
+    <option value="ELL_ELLESMERE PORT" >ELLESMERE PORT</option>
+    <option value="EXE_EXETER" >EXETER</option>
+    <option value="EXE_Exmouth" >Exmouth</option>
+    <option value="FAL_FALMOUTH" >FALMOUTH</option>
+    <option value="WTS_Faversham" >Faversham</option>
+    <option value="FXT_FELIXSTOWE" >FELIXSTOWE</option>
+    <option value="COL_Fingringhoe" >Fingringhoe</option>
+    <option value="FIS_FISHGUARD" >FISHGUARD</option>
+    <option value="FLE_FLEETWOOD" >FLEETWOOD</option>
+    <option value="TRT_Flixborough Wharf" >Flixborough Wharf</option>
+    <option value="FOL_FOLKESTONE" >FOLKESTONE</option>
+    <option value="FOY_FOWEY" >FOWEY</option>
+    <option value="TRT_Gainsborough" >Gainsborough</option>
+    <option value="LIV_Garston" >Garston</option>
+    <option value="HEY_Glasson Dock" >Glasson Dock</option>
+    <option value="SSS_Gloucester" >Gloucester</option>
+    <option value="GOO_GOOLE" >GOOLE</option>
+    <option value="GTY_GREAT YARMOUTH" >GREAT YARMOUTH</option>
+    <option value="GRI_GRIMSBY" >GRIMSBY</option>
+    <option value="TRT_Grove Wharves" >Grove Wharves</option>
+    <option value="TRT_Guness Wharf" >Guness Wharf</option>
+    <option value="HTP_HARTLEPOOL" >HARTLEPOOL</option>
+    <option value="HRH_HARWICH" >HARWICH</option>
+    <option value="HEY_HEYSHAM" >HEYSHAM</option>
+    <option value="LON_Holehaven" >Holehaven</option>
+    <option value="HLD_HOLYHEAD" >HOLYHEAD</option>
+    <option value="GOO_Howdendyke" >Howdendyke</option>
+    <option value="HUL_HULL" >HULL</option>
+    <option value="IMM_IMMINGHAM" >IMMINGHAM</option>
+    <option value="IPS_IPSWICH" >IPSWICH</option>
+    <option value="TRT_Keadby" >Keadby</option>
+    <option value="KLN_KINGS LYNN" >KINGS LYNN</option>
+    <option value="HEY_Lancaster" >Lancaster</option>
+    <option value="LON_Leigh-on-Sea" >Leigh-on-Sea</option>
+    <option value="SHO_Littlehampton" >Littlehampton</option>
+    <option value="LIV_LIVERPOOL" >LIVERPOOL</option>
+    <option value="LLA_LLANDDULAS" >LLANDDULAS</option>
+    <option value="SWA_Llanelli" >Llanelli</option>
+    <option value="LON_LONDON" >LONDON</option>
+    <option value="LOW_LOWESTOFT" >LOWESTOFT</option>
+    <option value="STN_Lymington" >Lymington</option>
+    <option value="COL_Maldon" >Maldon</option>
+    <option value="MNC_MANCHESTER" >MANCHESTER</option>
+    <option value="MED_MEDWAY" >MEDWAY</option>
+    <option value="MID_MIDDLESBROUGH" >MIDDLESBROUGH</option>
+    <option value="MIL_MILFORD" >MILFORD</option>
+    <option value="BAR_Millom" >Millom</option>
+    <option value="HRH_Mistley" >Mistley</option>
+    <option value="MOS_MOSTYN" >MOSTYN</option>
+    <option value="TRT_Neap House" >Neap House</option>
+    <option value="PTB_Neath Abbey" >Neath Abbey</option>
+    <option value="TYN_Newcastle" >Newcastle</option>
+    <option value="NHV_NEWHAVEN" >NEWHAVEN</option>
+    <option value="IMM_New Holland" >New Holland</option>
+    <option value="PEN_Newlyn" >Newlyn</option>
+    <option value="NPT_NEWPORT, Gwent" >NEWPORT, Gwent</option>
+    <option value="TYN_North Shields" >North Shields</option>
+    <option value="NTH_NORTHWICH" >NORTHWICH</option>
+    <option value="NOR_NORWICH" >NORWICH</option>
+    <option value="PLY_Padstow" >Padstow</option>
+    <option value="PAR_PAR" >PAR</option>
+    <option value="HRH_Parkeston Quay" >Parkeston Quay</option>
+    <option value="MNC_Partington" >Partington</option>
+    <option value="MIL_Pembroke Ferry" >Pembroke Ferry</option>
+    <option value="MIL_Pembroke (Oils) SO" >Pembroke (Oils) SO</option>
+    <option value="MIL_Pembroke EPU" >Pembroke EPU</option>
+    <option value="FAL_Penryn" >Penryn</option>
+    <option value="PEN_PENZANCE" >PENZANCE</option>
+    <option value="PLY_PLYMOUTH" >PLYMOUTH</option>
+    <option value="TRT_Point BID" >Point BID</option>
+    <option value="POO_POOLE" >POOLE</option>
+    <option value="LLA_Port Penrhyn" >Port Penrhyn</option>
+    <option value="AVO_Portishead" >Portishead</option>
+    <option value="WEY_Portland" >Portland</option>
+    <option value="PTM_PORTSMOUTH" >PORTSMOUTH</option>
+    <option value="PTB_PORT TALBOT" >PORT TALBOT</option>
+    <option value="MED_Queenborough" >Queenborough</option>
+    <option value="RMG_RAMSGATE" >RAMSGATE</option>
+    <option value="ROC_Reading" >Reading</option>
+    <option value="MOS_Rhyl" >Rhyl</option>
+    <option value="MED_Ridham Dock" >Ridham Dock</option>
+    <option value="MED_Rochester" >Rochester</option>
+    <option value="LON_Rochford" >Rochford</option>
+    <option value="COL_Rowhedge" >Rowhedge</option>
+    <option value="AVO_Royal Portbury Dock" >Royal Portbury Dock</option>
+    <option value="RUN_RUNCORN" >RUNCORN</option>
+    <option value="FOL_Rye" >Rye</option>
+    <option value="SCA_SCARBOROUGH" >SCARBOROUGH</option>
+    <option value="TRT_Scunthorpe" >Scunthorpe</option>
+    <option value="SUN_Seaham" >Seaham</option>
+    <option value="GOO_Selby" >Selby</option>
+    <option value="SSS_SHARPNESS" >SHARPNESS</option>
+    <option value="MED_Sheerness" >Sheerness</option>
+    <option value="SHO_SHOREHAM" >SHOREHAM</option>
+    <option value="MOS_Shotton" >Shotton</option>
+    <option value="SIL_SILLOTH" >SILLOTH</option>
+    <option value="STN_SOUTHAMPTON" >SOUTHAMPTON</option>
+    <option value="LON_Southend (Corporation Jetty)" >Southend (Corporation Jetty)</option>
+    <option value="TYN_South Shields" >South Shields</option>
+    <option value="IVS_St Ives" >St Ives</option>
+    <option value="SUN_SUNDERLAND" >SUNDERLAND</option>
+    <option value="SWA_SWANSEA" >SWANSEA</option>
+    <option value="MID_Teesport" >Teesport</option>
+    <option value="TNM_TEIGNMOUTH" >TEIGNMOUTH</option>
+    <option value="LON_Tilbury" >Tilbury</option>
+    <option value="THP_THAMESPORT" >THAMESPORT</option>
+    <option value="EXE_Topsham" >Topsham</option>
+    <option value="TNM_Torquay" >Torquay</option>
+    <option value="TRT_TRENT" >TRENT</option>
+    <option value="FAL_Truro" >Truro</option>
+    <option value="TYN_TYNE" >TYNE</option>
+    <option value="TEP_THAMES EUROPORT" >THAMES EUROPORT</option>
+    <option value="RUN_Warrington" >Warrington</option>
+    <option value="WAT_WATCHET" >WATCHET</option>
+    <option value="KLN_Wells" >Wells</option>
+    <option value="WEY_WEYMOUTH" >WEYMOUTH</option>
+    <option value="WTB_WHITBY" >WHITBY</option>
+    <option value="WHV_WHITEHAVEN" >WHITEHAVEN</option>
+    <option value="WTS_WHITSTABLE" >WHITSTABLE</option>
+    <option value="WIS_WISBECH" >WISBECH</option>
+    <option value="COL_Wivenhoe" >Wivenhoe</option>
+    <option value="WOR_WORKINGTON" >WORKINGTON</option>
+    <option value="DGS_Castletown" >Castletown</option>
+    <option value="DGS_DOUGLAS" >DOUGLAS</option>
+    <option value="DGS_Peel" >Peel</option>
+    <option value="DGS_Ramsey" >Ramsey</option>
+    <option value="JSY_St Helier" >St Helier</option>
+    <option value="GSY_St Peter Port" >St Peter Port</option>
+    <option value="ABD_ABERDEEN" >ABERDEEN</option>
+    <option value="GRK_Annan" >Annan</option>
+    <option value="DUN_Arbroath" >Arbroath</option>
+    <option value="ARD_ARDROSSAN" >ARDROSSAN</option>
+    <option value="AYR_AYR" >AYR</option>
+    <option value="GRK_Barcaldine" >Barcaldine</option>
+    <option value="GRG_Braefoot Bay" >Braefoot Bay</option>
+    <option value="GLW_Bowling" >Bowling</option>
+    <option value="FRB_Buckie" >Buckie</option>
+    <option value="INV_Burghead" >Burghead</option>
+    <option value="GRG_Burntisland" >Burntisland</option>
+    <option value="GRK_Campbeltown" >Campbeltown</option>
+    <option value="INV_Corpach, incl. Annat Pier" >Corpach, incl. Annat Pier</option>
+    <option value="DUN_DUNDEE" >DUNDEE</option>
+    <option value="GRK_Faslane" >Faslane</option>
+    <option value="GRK_Finnart" >Finnart</option>
+    <option value="FRB_FRASERBURGH" >FRASERBURGH</option>
+    <option value="GRK_Furnace" >Furnace</option>
+    <option value="GRK_Garlieston" >Garlieston</option>
+    <option value="AYR_Girvan" >Girvan</option>
+    <option value="GLW_GLASGOW" >GLASGOW</option>
+    <option value="GRG_GRANGEMOUTH" >GRANGEMOUTH</option>
+    <option value="GRK_GREENOCK" >GREENOCK</option>
+    <option value="HPT_HOUND POINT TERMINAL" >HOUND POINT TERMINAL</option>
+    <option value="GRK_Hunterston" >Hunterston</option>
+    <option value="INV_Invergordon" >Invergordon</option>
+    <option value="GRG_Inverkeithing" >Inverkeithing</option>
+    <option value="INV_INVERNESS" >INVERNESS</option>
+    <option value="IRV_IRVINE" >IRVINE</option>
+    <option value="GRK_Islay" >Islay</option>
+    <option value="KKD_KIRKCALDY" >KIRKCALDY</option>
+    <option value="KWL_KIRKWALL" >KIRKWALL</option>
+    <option value="LEI_LEITH" >LEITH</option>
+    <option value="LER_LERWICK" >LERWICK</option>
+    <option value="INV_Lochaline" >Lochaline</option>
+    <option value="INV_Lossiemouth" >Lossiemouth</option>
+    <option value="FRB_Macduff" >Macduff</option>
+    <option value="GRG_Methil" >Methil</option>
+    <option value="MON_MONTROSE" >MONTROSE</option>
+    <option value="GRK_Oban" >Oban</option>
+    <option value="GRK_Palnackie" >Palnackie</option>
+    <option value="DUN_Perth" >Perth</option>
+    <option value="PHD_PETERHEAD" >PETERHEAD</option>
+    <option value="ROS_ROSYTH" >ROSYTH</option>
+    <option value="LER_Scalloway" >Scalloway</option>
+    <option value="INV_Scrabster" >Scrabster</option>
+    <option value="STO_STORNOWAY" >STORNOWAY</option>
+    <option value="GRK_Stranraer" >Stranraer</option>
+    <option value="KWL_Stromness" >Stromness</option>
+    <option value="DUN_Tayport" >Tayport</option>
+    <option value="INV_Ullapool" >Ullapool</option>
+    <option value="BEL_BELFAST" >BELFAST</option>
+    <option value="CLR_COLERAINE" >COLERAINE</option>
+    <option value="BEL_Larne" >Larne</option>
+    <option value="LDY_LONDONDERRY" >LONDONDERRY</option>
+    <option value="CLR_Portrush" >Portrush</option>
+    <option value="WPT_WARRENPOINT" >WARRENPOINT</option>
+    <option value="ILB_LAND BOUNDARY" >LAND BOUNDARY</option>
+    <option value="AFK_Ashford Intl" >Ashford Intl</option>
+    <option value="EBD_Ebbsfleet Intl" >Ebbsfleet Intl</option>
+    <option value="STP_London (St Pancras Intl)" >London (St Pancras Intl)</option>
+    <option value="CHE_Folkestone (Eurotunnel)" >Folkestone (Eurotunnel)</option>
+    <option value="NWY_Newry" >Newry</option>
+    <option value="PTN_Portdown" >Portdown</option>
+    <option value="Lurgan" >Lurgan</option>
+    <option value="LBN_Lisburn" >Lisburn</option>
+    <option value="BEL_Belfast" >Belfast</option>
+    <option value="BNG_Bangor" >Bangor</option>
+    <option value="LRN_Larne" >Larne</option>
+    <option value="ANM_Antrim" >Antrim</option>
+    <option value="BMA_Ballymena" >Ballymena</option>
+    <option value="CEI_Coleraine" >Coleraine</option>
+    <option value="PTS_Portrush" >Portrush</option>
+    <option value="LDR_Derry" >Derry</option>
+  </select>
+</div>
+
+</div>
+
+
+
+
+<button class="button" id="continue"><span lang="en">Continue</span><span lang="ar">استمر</span></button>
+
+</form>
+
+</div>
+</div>
+</main>
+
+{% endblock %}

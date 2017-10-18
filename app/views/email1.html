@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+        <div class="column-full">
+          <header>
+          <h1 class="heading-large"><span lang="en">What is your email address?</span><span lang="ar">ما عنوان بريدك الإلكتروني؟</span></h1>
+        </header>
+
+        <form action="email1-check" method="POST"  autocomplete="off" novalidate="true" spellcheck="false">
+          <div id="email-group" class="form-group ">
+            <label for="email" class="form-label-bold">
+              <span id="email-hint" class="form-hint"><span lang="en">We will send your electronic visa waiver to this address</span><span lang="ar">سنرسل الإعفاء الإلكتروني من التأشيرة لهذا العنوان</span></span>
+            </label>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              class="form-control"
+              aria-required="true"
+               maxlength="127"
+               aria-describedby="email-hint">
+          </div>
+
+          <button class="button" id="continue"><span lang="en">Continue</span><span lang="ar">استمر</span></button>
+          <input type="hidden" name="x-csrf-token" value="R7SvcDg6-yi5DkirnJwxXThv_h9jUkzEJI2o" />
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

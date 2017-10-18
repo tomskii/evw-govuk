@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+        <div class="column-full">
+          <header>
+          <h1 class="heading-large"><span lang="en">What is your contact phone number in the UK?</span><span lang="ar">ما رقم التواصل معك في المملكة المتحدة؟</span></h1>
+        </header>
+
+        <form action="travel-details-departure" method="POST"  autocomplete="off" novalidate="true" spellcheck="false">
+
+          <div id="uk-phone-group" class="form-group ">
+            <input
+              type="text"
+              name="uk-phone"
+              id="uk-phone"
+              class="form-control"
+              aria-required="true"
+              maxlength="20">
+          </div>
+
+          <button class="button" id="continue"><span lang="en">Continue</span><span lang="ar">استمر</span></button>
+          <input type="hidden" name="x-csrf-token" value="R7SvcDg6-yi5DkirnJwxXThv_h9jUkzEJI2o" />
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

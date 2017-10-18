@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+        <div class="column-full">
+          <header>
+          <h1 class="heading-large"><span lang="en">How will you arrive in the UK?</span><span lang="ar">بأي وسيلة نقل ستصل للمملكة المتحدة؟</span></h1>
+        </header>
+
+        <form action="flight-number" method="GET"  autocomplete="off" novalidate="true" spellcheck="false">
+
+        <div id="mode-of-transport-group" class="form-group form-group">
+          <div role="" aria-required="true">
+            <legend class='form-label-bold'>
+              <span class="visuallyhidden"><span lang="en">How will you arrive in the UK?</span><span lang="ar">بأي وسيلة نقل ستصل للمملكة المتحدة؟</span></span>
+
+
+            </legend>
+            <div class="multiple-choice">
+              <input
+                type="radio"
+                name="mode-of-transport"
+                id="mode-of-transport-Plane"
+                value="Plane"
+                required="true"
+
+
+
+
+              >
+              <label for="mode-of-transport-Plane">
+                <span lang="en">By plane</span><span lang="ar">طائرة</span>
+              </label>
+            </div>
+            <div class="multiple-choice">
+              <input
+                type="radio"
+                name="mode-of-transport"
+                id="mode-of-transport-Train"
+                value="Train"
+                required="true"
+
+
+
+
+              >
+              <label for="mode-of-transport-Train">
+                <span lang="en">By train</span><span lang="ar">قطار</span>
+              </label>
+            </div>
+            <div class="multiple-choice">
+              <input
+                type="radio"
+                name="mode-of-transport"
+                id="mode-of-transport-Private Plane"
+                value="Private Plane"
+                required="true"
+
+
+
+
+              >
+              <label for="mode-of-transport-Private Plane">
+                <span lang="en">By private plane</span><span lang="ar">بالطائرة الخاصة</span>
+              </label>
+            </div>
+            <div class="multiple-choice">
+              <input
+                type="radio"
+                name="mode-of-transport"
+                id="mode-of-transport-Boat"
+                value="Boat"
+                required="true"
+
+
+
+
+              >
+              <label for="mode-of-transport-Boat">
+                <span lang="en">By boat</span><span lang="ar">سفينة</span>
+              </label>
+            </div>
+            <div class="multiple-choice">
+              <input
+                type="radio"
+                name="mode-of-transport"
+                id="mode-of-transport-Land"
+                value="Land"
+                required="true"
+
+
+
+
+              >
+              <label for="mode-of-transport-Land">
+                <span lang="en">By road (from the Republic of Ireland)</span><span lang="ar">عبرا لطرق (من جمهورية إيرلندا)</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+        <button class="button" id="continue"><span lang="en">Continue</span><span lang="ar">استمر</span></button>
+
+        </form>
+
+</div>
+</div>
+</main>
+
+{% endblock %}

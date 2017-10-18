@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+        <div class="column-full">
+          <header>
+          <h1 class="heading-large"><span lang="en">Are you employed?</span><span lang="ar">هل أنت موظف؟</span></h1>
+        </header>
+
+        <form action="who-is-applying" method="POST"  autocomplete="off" novalidate="true" spellcheck="false">
+
+          <div id="employed-group" class="form-group form-group">
+  <div role="" aria-required="true">
+
+    <div class="multiple-choice" data-target="employed-div">
+      <input
+        type="radio"
+        name="employed"
+        id="employed-Yes"
+        value="Yes"
+        required="true"
+         >
+      <label for="employed-Yes">
+        <span lang="en">Yes</span><span lang="ar">نعم</span>
+      </label>
+    </div>
+    <div class="multiple-choice">
+      <input
+        type="radio"
+        name="employed"
+        id="employed-No"
+        value="No"
+        required="true">
+      <label for="employed-No">
+        <span lang="en">No</span><span lang="ar">لا</span>
+      </label>
+    </div>
+  </div>
+</div>
+
+
+<div id="employed-div" class="form-group panel-indent narrow js-hidden">
+  <div id="employer-company-group" class="form-group ">
+  <label for="employer-company" class="form-label-bold">
+    <span lang="en">What is the name of the company or organisation you work for?</span><span lang="ar">ما اسم الشركة او المنظمة التي تعمل بها؟</span>
+  </label>
+  <input
+    type="text"
+    name="employer-company"
+    id="employer-company"
+    class="form-control"
+    aria-required="true"
+    maxlength="60">
+</div>
+</div>
+<button class="button" id="continue"><span lang="en">Continue</span><span lang="ar">استمر</span></button>
+
+</form>
+
+</div>
+</div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+        <div class="column-full">
+          <header>
+          <h1 class="heading-large"><span lang="en">Do you plan to make more than one trip to the UK during the next 3 months?</span><span lang="ar">هل تعتزم ان تقوم بأكثر من رحلة واحدة للمملكة المتحدة بغضون الثلاث شهور المقبلة؟</span></h1>
+        </header>
+
+        <form action="country-completion" method="POST"  autocomplete="off" novalidate="true" spellcheck="false">
+
+        <div id="uk-visit-more-than-once-group" class="form-group form-group">
+          <div role="" aria-required="true">
+
+            <div class="multiple-choice">
+              <input
+                type="radio"
+                name="uk-visit-more-than-once"
+                id="uk-visit-more-than-once-Yes"
+                value="Yes"
+                required="true">
+              <label for="uk-visit-more-than-once-Yes">
+                <span lang="en">Yes</span><span lang="ar">نعم</span>
+              </label>
+            </div>
+            <div class="multiple-choice">
+              <input
+                type="radio"
+                name="uk-visit-more-than-once"
+                id="uk-visit-more-than-once-No"
+                value="No"
+                required="true">
+              <label for="uk-visit-more-than-once-No">
+                <span lang="en">No</span><span lang="ar">لا</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+<button class="button" id="continue"><span lang="en">Continue</span><span lang="ar">استمر</span></button>
+    <input type="hidden" name="x-csrf-token" value="R7SvcDg6-yi5DkirnJwxXThv_h9jUkzEJI2o" />
+</form>
+
+</div>
+</div>
+</main>
+
+{% endblock %}

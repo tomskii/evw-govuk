@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+        <div class="column-full">
+          <header>
+          <h1 class="heading-large"><span lang="en">What is the main reason for your visit to the UK?</span><span lang="ar">ما سبب زيارتك الرئيسي للمملكة المتحدة؟</span></h1>
+        </header>
+
+        <form action="travelling-with" method="POST"  autocomplete="off" novalidate="true" spellcheck="false">
+
+<div id="reason-for-visit-group" class="form-group form-group">
+  <div role="" aria-required="true">
+    <legend class='form-label-bold'>
+      <span></span>
+    </legend>
+    <div class="multiple-choice">
+      <input
+        type="radio"
+        name="reason-for-visit"
+        id="reason-for-visit-Business"
+        value="Business"
+        required="true">
+      <label for="reason-for-visit-Business">
+        <span lang="en">Business</span><span lang="ar">العمل</span>
+      </label>
+    </div>
+    <div class="multiple-choice">
+      <input
+        type="radio"
+        name="reason-for-visit"
+        id="reason-for-visit-Tourism"
+        value="Tourism"
+        required="true">
+      <label for="reason-for-visit-Tourism">
+        <span lang="en">Tourism</span><span lang="ar">إجازة</span>
+      </label>
+    </div>
+    <div class="multiple-choice">
+      <input
+        type="radio"
+        name="reason-for-visit"
+        id="reason-for-visit-Study"
+        value="Study"
+        required="true">
+      <label for="reason-for-visit-Study">
+        <span lang="en">Study</span><span lang="ar">دراسة</span>
+      </label>
+    </div>
+    <div class="multiple-choice">
+      <input
+        type="radio"
+        name="reason-for-visit"
+        id="reason-for-visit-Medical"
+        value="Medical"
+        required="true">
+      <label for="reason-for-visit-Medical">
+        <span lang="en">Medical care</span><span lang="ar">العلاج</span>
+      </label>
+    </div>
+    <div class="multiple-choice" data-target="other-reason-for-visit-div">
+      <input
+        type="radio"
+        name="reason-for-visit"
+        id="reason-for-visit-Other"
+        value="Other"
+        required="true"
+         data-toggle="other-reason-for-visit-div">
+      <label for="reason-for-visit-Other">
+        <span lang="en">Other</span><span lang="ar">غيره</span>
+      </label>
+    </div>
+  </div>
+</div>
+
+
+<div id="other-reason-for-visit-div" class="form-group panel-indent narrow js-hidden">
+  <h3><span lang="en">You can not use an electronic visa waiver to:</span><span lang="ar">لا يمكنك ان تستخدم الإعفاء الإلكتروني من التأشيرة لكي:</span></h3>
+  <ul class="list list-bullet column-half">
+    <li>stay in the UK for more than 6 months</li>
+    <li>work in the UK</li>
+    <li>get married or enter into a civil partnership in the UK</li>
+  </ul>
+  <ul class="list list-bullet column-half" lang="ar">
+    <li>تبقى بالمملكة المتحدة لمدة تتجاوز 6 شهور</li>
+    <li>تعمل بالمملكة المتحدة</li>
+    <li>تتزوج سواء دينيا او مدنيا</li>
+  </ul>
+
+  <div id="other-reason-for-visit-group" class="form-group  form-group">
+  <label for="other-reason-for-visit" class="form-label-bold">
+    <span lang="en">Please enter your reason for travel.</span><span lang="ar">الرجاء إدخال السبب الخاص بك للسفر.</span>
+  </label>
+  <input
+    type="text"
+    name="other-reason-for-visit"
+    id="other-reason-for-visit"
+    class="form-control"
+    aria-required="true"
+    maxlength="30">
+</div>
+
+</div>
+
+<button class="button" id="continue"><span lang="en">Continue</span><span lang="ar">استمر</span></button>
+  <input type="hidden" name="x-csrf-token" value="WRId6GDx-Slge0AfCuKovXxX8HR2vUazmDMk" />
+</form>
+
+
+
+
+
+</div>
+</div>
+</main>
+
+{% endblock %}

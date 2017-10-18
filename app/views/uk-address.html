@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+        <div class="column-full">
+          <header>
+          <h1 class="heading-large"><span lang="en">Where will you stay first when you arrive in the UK?</span><span lang="ar">ما العنوان الذي ستنزل به مبدئيا عند وصولك بالمملكة المتحدة؟</span></h1>
+        </header>
+
+        <form action="uk-phone" method="POST"  autocomplete="off" novalidate="true" spellcheck="false">
+
+<div id="address-group" class="form-group">
+
+  <div id="uk-address-1-group" class="form-group ">
+  <label for="uk-address-1" class="form-label-bold">
+<span lang="en">Address</span><span lang="ar">عنوان</span>
+</label>
+  <input
+    type="text"
+    name="uk-address-1"
+    id="uk-address-1"
+    class="form-control"
+    aria-required="true"
+    maxlength="35">
+</div>
+  <div id="uk-address-2-group" class="form-group ">
+  <label for="uk-address-2" class="form-label-bold">
+  </label>
+  <input
+    type="text"
+    name="uk-address-2"
+    id="uk-address-2"
+    class="form-control"
+    aria-required="false"
+    maxlength="35">
+</div>
+
+  <div id="uk-address-3-group" class="form-group ">
+  <label for="uk-address-3" class="form-label-bold">
+  </label>
+  <input
+    type="text"
+    name="uk-address-3"
+    id="uk-address-3"
+    class="form-control"
+    aria-required="false"
+    maxlength="35">
+</div>
+
+  <div id="uk-address-4-group" class="form-group ">
+  <label for="uk-address-4" class="form-label-bold">
+  </label>
+  <input
+    type="text"
+    name="uk-address-4"
+    id="uk-address-4"
+    class="form-control"
+    aria-required="false"
+    maxlength="35">
+</div>
+
+</div>
+
+
+<div id="uk-postcode-group" class="form-group ">
+  <label for="uk-postcode" class="form-label-bold">
+    <span lang="en">Postcode</span><span lang="ar">الرمز البريدي</span>
+
+
+  </label>
+  <input
+    type="text"
+    name="uk-postcode"
+    id="uk-postcode"
+    class="form-control"
+    aria-required="true"
+
+
+
+     maxlength="35"
+
+
+
+
+  >
+</div>
+
+
+
+<button class="button" id="continue"><span lang="en">Continue</span><span lang="ar">استمر</span></button>
+
+
+    <input type="hidden" name="x-csrf-token" value="R7SvcDg6-yi5DkirnJwxXThv_h9jUkzEJI2o" />
+</form>
+
+</div>
+</div>
+</main>
+
+{% endblock %}

@@ -5,16 +5,7 @@
 {% endblock %}
 
 {% block content %}
-<script>
-	$(document).ready(function(){
-    $(".hideanyOtherNamesDiv").click(function(){
-        $("#anyOtherNamesDiv").hide();
-    });
-    $(".showanyOtherNamesDiv").click(function(){
-        $("#enter-other-names-group").show();
-    });
-});
-</script>
+
 <main id="content" role="main">
 {% include "includes/phase_banner_beta.html" %}
   <div class="grid-row">
@@ -34,15 +25,13 @@
         name="other-names"
         id="other-names-Yes"
         value="Yes"
-        required="true"
-         data-toggle="enter-other-names-group">
+        required="true">
       <label for="other-names-Yes">
         <span lang="en">Yes</span><span lang="ar">نعم</span>
       </label>
     </div>
     <div class="multiple-choice">
       <input
-        class="hideanyOtherNamesDiv"
         type="radio"
         name="other-names"
         id="other-names-No"

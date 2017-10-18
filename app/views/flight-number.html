@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+        <div class="column-full">
+          <header>
+          <h1 class="heading-large"><span lang="en">What is your flight number?</span><span lang="ar">رحلتك للمملكة المتحدة</span></h1>
+        </header>
+
+        <form action="date-departure" method="POST"  autocomplete="off" novalidate="true" spellcheck="false">
+
+<label class="form-label-bold" for="plane-flight-number"><span lang="en">For example EK009, QR003 or KU101</span><span lang="ar">ما رقم رحلتك؟ مثال: EK009 او QR003 او KU101</span></label>
+
+<p class="panel-indent flight-hint split-spans"><span lang="en">If you have any stops or connecting flights you must enter the number for the final part of your journey to the UK</span><span lang="ar">اذا احتوت رحلتك على توقفات او رحلة وصل، يجب ان تدخل رقم الرحلة في الجزء النهائي من رحلتك للمملكة المتحدة</span></p>
+
+<div id="plane-flight-number-group" class="form-group  form-block">
+  <label for="plane-flight-number" class="form-label-bold">
+
+
+
+  </label>
+  <input
+    type="text"
+    name="plane-flight-number"
+    id="plane-flight-number"
+    class="form-control"
+    aria-required="true"
+
+
+
+     maxlength="9"
+
+
+
+
+  >
+</div>
+
+
+<details >
+  <summary>
+    <span lang="en">What is my flight number?</span><span lang="ar">ما رقم رحلتي؟</span>
+  </summary>
+  <div class="panel-indent split-spans">
+    <span lang="en"><p>A flight number has 2 or 3 letters or numbers representing the airline followed by 1 to 4 numbers and sometimes an extra letter at the end, for example EK009, QR003 or KU101. It is not the same as the booking confirmation from your travel agent or airline.</p><p>If you are taking more than 1 flight to reach the UK we only need to know the number for the flight that lands in the UK.</p><p>Contact your travel agent or airline if you can’t find your flight number - your electronic visa waiver will be delayed if you enter it incorrectly.</p></span><span lang="ar"><p>يحتوي رقم الرحلة على حرفين أو ثلاثة أو أرقام تمثل الخطوط الجوية، ويتبعه رقم مكون من خانة إلى أربعة خانات رقمية وأحيانا قد يحتوي على حرف إضافي في نهايته. مثال: EK009 او QR003 او KU101. وهذا ليس رقم تأكيد الحجز من وكيل السفر او الخطوط الجوية.</p><p>اذا كنت ستأخذ أكثر من رحلة لتصل المملكة المتحدة، فلا نحتاج فقط إلا لرقم الرحلة التي ستهبط بالمملكة المتحدة.</p><p>اتصل مع وكيل السفر او الخطوط الجوية اذا لم تستطيع ان تجد رقم الرحلة - سيتم تأخير الإعفاء الإلكتروني من التأشيرة الخاص بك اذا أدخلت هذا الرقم بشكل غير صحيح.</p></span>
+  </div>
+</details>
+
+<button class="button" id="continue"><span lang="en">Continue</span><span lang="ar">استمر</span></button>
+
+
+    <input type="hidden" name="x-csrf-token" value="sOzctwDP-e_yKs6bohB0ioVyaXgUX_n7UsxU" />
+</form>
+
+
+</div>
+</div>
+</main>
+
+{% endblock %}

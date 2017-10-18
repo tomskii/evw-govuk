@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+    <div class="column-full">
+      <header>
+        <h1 class="heading-large"><span lang="en">Other nationalities</span><span lang="ar">جنسياتك الأخرى</span></h1>
+      </header>
+
+      <form action="how-will-you-arrive" method="POST"  autocomplete="off" novalidate="true" spellcheck="false">
+
+      <div id="have-other-nationalities-group" class="form-group form-group">
+        <div role="" aria-required="true">
+          <legend class='form-label-bold'>
+            <span><span lang="en">Do you currently have any other nationalities?</span><span lang="ar">هل تحمل أي جنسيات أخرى؟</span></span>
+          </legend>
+          <div class="multiple-choice" data-target="other-nationalities-group">
+            <input type="radio" name="have-other-nationalities" id="have-other-nationalities-Yes" value="Yes" required="true">
+            <label for="have-other-nationalities-Yes">
+              <span lang="en">Yes</span><span lang="ar">نعم</span>
+            </label>
+          </div>
+          <div class="multiple-choice">
+            <input type="radio" name="have-other-nationalities" id="have-other-nationalities-No" value="No" required="true">
+            <label for="have-other-nationalities-No">
+              <span lang="en">No</span><span lang="ar">لا</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div id="other-nationalities-group" class="form-group panel-indent narrow js-hidden">
+        <label for="other-nationalities" class="form-label-bold">
+          <span lang="en">Enter the other nationalities that you hold.</span><span lang="ar">أدخل الجنسيات الأخرى التي تحملها.</span>
+          <span id="other-nationalities-hint" class="form-hint"><span lang="en">For example, 'Canadian, Italian'</span><span lang="ar">على سبيل المثال، الكندية أو الإيطالية</span></span>
+        </label>
+        <input type="text" name="other-nationalities" id="other-nationalities" class="form-control" aria-required="true" maxlength="100" aria-describedby="other-nationalities-hint">
+      </div>
+
+      <div id="had-previous-nationalities-group" class="form-group form-group">
+        <div role="" aria-required="true">
+          <legend class='form-label-bold'>
+            <span><span lang="en">Have you had any other nationalities in the past?</span><span lang="ar">هل حملت أي جنسيات أخرى سابقا؟</span></span>
+          </legend>
+          <div class="multiple-choice" data-target="enter-other-names-group">
+            <input
+              type="radio"
+              name="had-previous-nationalities"
+              id="had-previous-nationalities-Yes"
+              value="Yes"
+              required="true"
+              class="showanyOtherNamesDiv">
+            <label for="had-previous-nationalities-Yes">
+              <span lang="en">Yes</span><span lang="ar">نعم</span>
+            </label>
+          </div>
+          <div class="multiple-choice">
+            <input
+              type="radio"
+              name="had-previous-nationalities"
+              id="had-previous-nationalities-No"
+              value="No"
+              required="true"
+              class="hideanyOtherNamesDiv">
+            <label for="had-previous-nationalities-No">
+              <span lang="en">No</span><span lang="ar">لا</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div id="enter-other-names-group" class="form-group  panel-indent narrow js-hidden">
+        <label for="previous-nationalities" class="form-label-bold">
+          <span lang="en">Enter all the nationalities you had previously.</span><span lang="ar">أدخل كل الجنسيات التي حملتها سابقا،</span>
+          <span id="previous-nationalities-hint" class="form-hint"><span lang="en">For example, 'British'</span><span lang="ar">مثلا، بريطانية</span></span>
+        </label>
+        <input
+          type="text"
+          name="previous-nationalities"
+          id="previous-nationalities"
+          class="form-control"
+          aria-required="true"
+          maxlength="100"
+          aria-describedby="previous-nationalities-hint">
+      </div>
+      <button class="button" id="continue"><span lang="en">Continue</span><span lang="ar">استمر</span></button>
+    </form>
+  </div>
+</div>
+</main>
+
+{% endblock %}

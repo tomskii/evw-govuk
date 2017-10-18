@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+        <div class="column-full">
+          <header>
+          <h1 class="heading-large"><span lang="en">Check your other email</span><span lang="ar">تحقق من بريدك الإلكتروني الآخر</span></h1>
+        </header>
+
+        <form action="employed" method="POST"  autocomplete="off" novalidate="true" spellcheck="false">
+
+          <div id="email-group" class="form-group ">
+          <input
+            type="text"
+            name="email"
+            id="email"
+            class="form-control"
+            aria-required="true"
+             maxlength="127"
+             aria-describedby="email-hint">
+        </div>
+        <button class="button" id="continue"><span lang="en">Yes - this email is correct</span><span lang="ar">نعم - هذه الرسالة الإلكترونية صحيحة</span></button>
+        <div class="form-group"><span class="form-hint"><span lang="en">If this email is wrong just change it above</span><span lang="ar">إذا كان هذا البريد الإلكتروني خاطئا، فقم بتغييره أعلاه</span></span></div>
+</form>
+
+</div>
+</div>
+</main>
+
+{% endblock %}

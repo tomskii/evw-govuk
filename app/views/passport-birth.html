@@ -20,7 +20,7 @@
           <label for="country-selector" class="form-label">
             <span lang="en">What is your country of birth?</span><span lang="ar">ما هو البلد الذي ولدت فيه؟</span>
           </label>
-          <select class="form-control" name="Country" id="country-selector" autofocus="autofocus" autocorrect="off" autocomplete="off">
+          <select id="country-selector" data-typeahead-maxlength="95" class="form-control typeahead" name="country-selector" aria-required="true">
 		      <option value="" selected="selected">Select Country</option>
 		      <option value="Afghanistan" data-alternative-spellings="AF افغانستان">Afghanistan</option>
 		      <option value="Åland Islands" data-alternative-spellings="AX Aaland Aland" data-relevancy-booster="0.5">Åland Islands</option>

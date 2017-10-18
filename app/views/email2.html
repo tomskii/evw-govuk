@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+        <div class="column-full">
+          <header>
+          <h1 class="heading-large"><span lang="en">Do you want to send a copy to another email address?</span><span lang="ar">هل تريد أن ترسل نسخة لبريد إلكتروني آخر؟</span></h1>
+        </header>
+
+        <form action="email2-check" method="POST"  autocomplete="off" novalidate="true" spellcheck="false">
+          <div id="email-group" class="form-group ">
+            <label for="email-other" class="form-label-bold">
+              <span id="email-hint" class="form-hint"><span lang="en">You can enter an address if you're completing this on behalf of someone else and want a copy of the electronic visa waiver sent to you</span><span lang="ar">يمكنك أن تدخل عنوان بريد إلكتروني إذا كنت تكمل الطلب نيابة عن شخص آخر وتريد الحصول على نسخة من الإعفاء الإلكتروني من التأشيرة</span></span>
+            </label>
+
+            <div id="email-other-group" class="form-group form-group">
+              <div role="" aria-required="true">
+
+                <div class="multiple-choice" data-target="email-other-input-group">
+                  <input
+                    type="radio"
+                    name="email-other"
+                    id="email-other-yes"
+                    value="Yes"
+                    required="true">
+                  <label for="email-other-yes">
+                    <span lang="en">Yes</span><span lang="ar">نعم</span>
+                  </label>
+                </div>
+                <div class="multiple-choice">
+                  <input
+                    type="radio"
+                    name="email-other"
+                    id="email-other-no"
+                    value="No"
+                    required="true">
+                  <label for="email-other-no">
+                    <span lang="en">No</span><span lang="ar">لا</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div id="email-other-input-group" class="panel-indent panel-indent narrow js-hidden">
+            	<div class="form-group " data-group-name="emailAddress">
+                  <label for="email-other" class="form-label-bold">
+                    <span lang="en">Enter your other email address</span><span lang="ar">أدخل عنوان البريد الإلكتروني الآخر	</span>
+                  </label>
+            			<input type="text" id="otheremailAddress" name="emailAddress" value="" class="form-control" maxlength="127">
+            	</div>
+
+            </div>
+
+
+          </div>
+
+          <button class="button" id="continue"><span lang="en">Continue</span><span lang="ar">استمر</span></button>
+          <input type="hidden" name="x-csrf-token" value="R7SvcDg6-yi5DkirnJwxXThv_h9jUkzEJI2o" />
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

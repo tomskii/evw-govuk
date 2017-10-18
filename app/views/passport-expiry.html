@@ -13,7 +13,7 @@
       <header>
           <h1 class="heading-large"><span lang="en">When does your passport expire?</span><span lang="ar">ما تاريخ انتهاء جواز سفرك؟</span></h1>
         </header>
-
+<form action="passport-issued-where" method="POST"  autocomplete="off" novalidate="true" spellcheck="false">
         <div id="passport-expiry-date-group" class="form-group">
 
   <div class="form-date">
@@ -30,22 +30,17 @@
     id="passport-expiry-date-day"
     class="form-control"
     aria-required="false"
-     value="14"
+
      min="1"
      max="31"
      maxlength="2"
      pattern="[0-9]*"
-     aria-describedby="passport-expiry-date-hint"
-
-
-  >
+     aria-describedby="passport-expiry-date-hint">
 </div>
 
 <div id="passport-expiry-date-month-group" class="form-group ">
   <label for="passport-expiry-date-month" class="form-label-bold">
     <span lang="en">Month</span><span lang="ar">الشهر</span>
-
-
   </label>
   <input
     type="text"
@@ -53,22 +48,16 @@
     id="passport-expiry-date-month"
     class="form-control"
     aria-required="false"
-     value="10"
      min="1"
      max="12"
      maxlength="2"
      pattern="[0-9]*"
-     aria-describedby="passport-expiry-date-hint"
-
-
-  >
+     aria-describedby="passport-expiry-date-hint">
 </div>
 
 <div id="passport-expiry-date-year-group" class="form-group ">
   <label for="passport-expiry-date-year" class="form-label-bold">
     <span lang="en">Year</span><span lang="ar">السنة</span>
-
-
   </label>
   <input
     type="text"
@@ -76,22 +65,13 @@
     id="passport-expiry-date-year"
     class="form-control"
     aria-required="false"
-     value="2025"
-
-
      maxlength="4"
      pattern="[0-9]*"
-     aria-describedby="passport-expiry-date-hint"
-
-
-  >
+     aria-describedby="passport-expiry-date-hint">
 </div>
 
   </div>
 </div>
-
-
-
         <button class="button" id="continue"><span lang="en">Continue</span><span lang="ar">استمر</span></button>
         </form>
     </div>

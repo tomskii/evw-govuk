@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+        <div class="column-full">
+          <header>
+          <h1 class="heading-large"><span lang="en">Your phone numbers</span><span lang="ar">الأرقام الرئيسية</span></h1>
+        </header>
+
+        <form action="email1" method="POST"  autocomplete="off" novalidate="true" spellcheck="false">
+
+          <div id="home-phone-group" class="form-group ">
+  <label for="home-phone" class="form-label-bold">
+    <span lang="en">What is your main home phone number?</span><span lang="ar">ما رقم الهاتف الرئيسي في منزلك؟</span>
+    <span id="home-phone-hint" class="form-hint"><span lang="en">Include the country code</span><span lang="ar">أدخل رقم الهاتف مع رمز الدولة</span></span>
+
+  </label>
+  <input
+    type="text"
+    name="home-phone"
+    id="home-phone"
+    class="form-control"
+    aria-required="true"
+
+
+
+     maxlength="20"
+
+     aria-describedby="home-phone-hint"
+
+
+  >
+</div>
+
+<div id="mobile-group" class="form-group ">
+  <label for="mobile" class="form-label-bold">
+    <span lang="en">What is your mobile phone number?</span><span lang="ar">ما رقم هاتفك الجوال؟</span>
+    <span id="mobile-hint" class="form-hint"><span lang="en">Include the country code</span><span lang="ar">أدخل رقم الهاتف مع رمز الدولة</span></span>
+
+  </label>
+  <input
+    type="text"
+    name="mobile"
+    id="mobile"
+    class="form-control"
+    aria-required="true"
+
+
+
+     maxlength="20"
+
+     aria-describedby="mobile-hint"
+
+
+  >
+</div>
+
+
+
+
+
+<button class="button" id="continue"><span lang="en">Continue</span><span lang="ar">استمر</span></button>
+    <input type="hidden" name="x-csrf-token" value="R7SvcDg6-yi5DkirnJwxXThv_h9jUkzEJI2o" />
+</form>
+
+</div>
+</div>
+</main>
+
+{% endblock %}

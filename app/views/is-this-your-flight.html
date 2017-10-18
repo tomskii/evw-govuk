@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+        <div class="column-full">
+          <header>
+          <h1 class="heading-large"><span lang="en">Is this your flight to the UK?</span><span lang="ar">هل هذه رحلتك للمملكة المتحدة؟</span></h1>
+        </header>
+
+        <table class="flight-details">
+          <tr>
+            <td>Flight number</td>
+            <td class="plane-flight-number">EK9</td>
+            <td lang="ar">رقم الرحلة</td>
+          </tr>
+          <tr>
+            <td>Departure airport</td>
+            <td class="departure-airport">Dubai Airport</td>
+            <td lang="ar">مطار المغادرة</td>
+          </tr>
+          <tr>
+            <td>Departure date</td>
+            <td class="departure-date">22/10/2017</td>
+            <td lang="ar">تاريخ المغادرة</td>
+          </tr>
+          <tr>
+            <td>Departure time</td>
+            <td class="departure-time">14:55</td>
+            <td lang="ar">وقت المغادره</td>
+          </tr>
+          <tr>
+            <td>Arrival airport</td>
+            <td class="arrival-airport">London Gatwick Airport</td>
+            <td lang="ar">مطار الوصول</td>
+          </tr>
+          <tr>
+            <td>Arrival date</td>
+            <td class="arrival-date">22/10/2017</td>
+            <td lang="ar">تاريخ الوصول</td>
+          </tr>
+          <tr>
+            <td>Arrival time</td>
+            <td class="arrival-time">19:45</td>
+            <td lang="ar">وقت الوصول</td>
+          </tr>
+        </table>
+
+        <form action="main-reason" method="POST"  autocomplete="off" novalidate="true" spellcheck="false">
+
+<div id="is-this-your-flight-group" class="form-group form-group">
+  <div role="" aria-required="true">
+    <legend class='form-label-bold'>
+      <span class="visuallyhidden"></span>
+
+
+    </legend>
+    <div class="multiple-choice">
+      <input
+        type="radio"
+        name="is-this-your-flight"
+        id="is-this-your-flight-Yes"
+        value="Yes"
+        required="true">
+      <label for="is-this-your-flight-Yes">
+        <span lang="en">Yes</span><span lang="ar">نعم</span>
+      </label>
+    </div>
+    <div class="multiple-choice">
+      <input
+        type="radio"
+        name="is-this-your-flight"
+        id="is-this-your-flight-No"
+        value="No"
+        required="true">
+      <label for="is-this-your-flight-No">
+        <span lang="en">No</span><span lang="ar">لا</span>
+      </label>
+    </div>
+  </div>
+</div>
+
+
+<button class="button" id="continue"><span lang="en">Continue</span><span lang="ar">استمر</span></button>
+    <input type="hidden" name="x-csrf-token" value="4Kw1bJrr-AaUItV12SGzUN999wFtMgRJW3y0" />
+</form>
+
+
+
+
+</div>
+</div>
+</main>
+
+{% endblock %}

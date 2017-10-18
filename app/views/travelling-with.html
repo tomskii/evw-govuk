@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+        <div class="column-full">
+          <header>
+          <h1 class="heading-large"><span lang="en">Are you travelling to the UK with anyone else?</span><span lang="ar">هل تسافر للمملكة المتحدة مع أحد؟</span></h1>
+        </header>
+
+        <form action="uk-address" method="POST"  autocomplete="off" novalidate="true" spellcheck="false">
+
+
+<div id="travelling-with-others-group" class="form-group form-group">
+  <div role="" aria-required="true">
+    <div class="multiple-choice" data-target="other-travellers-group">
+      <input
+        type="radio"
+        name="travelling-with-others"
+        id="travelling-with-others-Yes"
+        value="Yes"
+        required="true"
+         data-toggle="other-travellers-group">
+      <label for="travelling-with-others-Yes">
+        <span lang="en">Yes</span><span lang="ar">نعم</span>
+      </label>
+    </div>
+    <div class="multiple-choice">
+      <input
+        type="radio"
+        name="travelling-with-others"
+        id="travelling-with-others-No"
+        value="No"
+        required="true">
+      <label for="travelling-with-others-No">
+        <span lang="en">No</span><span lang="ar">لا</span>
+      </label>
+    </div>
+  </div>
+</div>
+
+<div id="other-travellers-group" class="form-group  panel-indent narrow js-hidden">
+  <label for="other-travellers" class="form-label-bold">
+    <span lang="en">Give the name of each person travelling with you. Each person must submit a separate electronic visa waiver form.</span><span lang="ar">أدخل اسم كل شخص يسافر معك. يجب على كل شخص أن يقدم طلبا منفصلا للحصول على الإعفاء الإلكتروني من التأشيرة.</span>
+  </label>
+  <textarea
+    name="other-travellers"
+    id="other-travellers"
+    class="form-control"
+    aria-required="true"
+     maxlength="200"></textarea>
+</div>
+
+<button class="button" id="continue"><span lang="en">Continue</span><span lang="ar">استمر</span></button>
+</form>
+
+</div>
+</div>
+</main>
+
+{% endblock %}

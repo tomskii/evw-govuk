@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+        <div class="column-full">
+          <header>
+          <h1 class="heading-large"><span lang="en">What date does flight ek009 leave?</span><span lang="ar">ما وقت مغادرة رحلة ek009 من؟</span></h1>
+        </header>
+
+        <form action="is-this-your-flight" method="POST"  autocomplete="off" novalidate="true" spellcheck="false">
+
+<div id="plane-date-of-departure-group" class="form-group">
+
+  <div class="form-date">
+    <p class="form-hint"><span lang="en">For example, <span dir="ltr">18 12 2017</span></span><span lang="ar">مثال، <span dir="ltr">18 12 2017</span></span></p>
+    <div id="plane-date-of-departure-day-group" class="form-group ">
+  <label for="plane-date-of-departure-day" class="form-label-bold">
+    <span lang="en">Day</span><span lang="ar">اليوم</span>
+
+
+  </label>
+  <input
+    type="text"
+    name="plane-date-of-departure-day"
+    id="plane-date-of-departure-day"
+    class="form-control"
+    aria-required="false"
+     min="1"
+     max="31"
+     maxlength="2"
+     pattern="[0-9]*"
+     aria-describedby="plane-date-of-departure-hint"
+
+
+  >
+</div>
+
+<div id="plane-date-of-departure-month-group" class="form-group ">
+  <label for="plane-date-of-departure-month" class="form-label-bold">
+    <span lang="en">Month</span><span lang="ar">الشهر</span>
+
+
+  </label>
+  <input
+    type="text"
+    name="plane-date-of-departure-month"
+    id="plane-date-of-departure-month"
+    class="form-control"
+    aria-required="false"
+     min="1"
+     max="12"
+     maxlength="2"
+     pattern="[0-9]*"
+     aria-describedby="plane-date-of-departure-hint"
+
+
+  >
+</div>
+
+<div id="plane-date-of-departure-year-group" class="form-group ">
+  <label for="plane-date-of-departure-year" class="form-label-bold">
+    <span lang="en">Year</span><span lang="ar">السنة</span>
+
+
+  </label>
+  <input
+    type="text"
+    name="plane-date-of-departure-year"
+    id="plane-date-of-departure-year"
+    class="form-control"
+    aria-required="false"
+     maxlength="4"
+     pattern="[0-9]*"
+     aria-describedby="plane-date-of-departure-hint"
+
+
+  >
+</div>
+
+  </div>
+</div>
+
+<button class="button" id="continue"><span lang="en">Continue</span><span lang="ar">استمر</span></button>
+
+
+    <input type="hidden" name="x-csrf-token" value="p16sOv6o-TbyRa5zThTZAOAGATKbYQmQnL9I" />
+</form>
+
+
+
+</div>
+</div>
+</main>
+
+{% endblock %}

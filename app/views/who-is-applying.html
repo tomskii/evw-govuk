@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+        <div class="column-full">
+          <header>
+          <h1 class="heading-large"><span lang="en">Applying for someone else</span><span lang="ar">التقدم نيابة عن شخص آخر</span></h1>
+        </header>
+
+        <form action="apply-for-minor" method="POST"  autocomplete="off" novalidate="true" spellcheck="false">
+
+        <div id="applying-for-other-group" class="form-group form-group">
+          <div role="" aria-required="true">
+            <legend class='form-label-bold'>
+              <span><span lang="en">Are you applying for this electronic visa waiver for someone else?</span><span lang="ar">هل تقدم طلب الإعفاء الإلكتروني من التأشيرة نيابة عن شخص آخر؟</span></span>
+            </legend>
+            <div class="multiple-choice">
+              <input
+                type="radio"
+                name="applying-for-other"
+                id="applying-for-other-Yes"
+                value="Yes"
+                required="true"
+                 data-toggle="applicant-container">
+              <label for="applying-for-other-Yes">
+                <span lang="en">Yes</span><span lang="ar">نعم</span>
+              </label>
+            </div>
+            <div class="multiple-choice">
+              <input
+                type="radio"
+                name="applying-for-other"
+                id="applying-for-other-No"
+                value="No"
+                required="true">
+              <label for="applying-for-other-No">
+                <span lang="en">No</span><span lang="ar">لا</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+<button class="button" id="continue"><span lang="en">Continue</span><span lang="ar">استمر</span></button>
+
+</form>
+
+</div>
+</div>
+</main>
+
+{% endblock %}
