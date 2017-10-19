@@ -17,7 +17,7 @@
         <table class="flight-details">
           <tr>
             <td>Flight number</td>
-            <td class="plane-flight-number">EK9</td>
+            <td class="plane-flight-number">{{ data['plane-flight-number'] }}</td>
             <td lang="ar">رقم الرحلة</td>
           </tr>
           <tr>
@@ -27,7 +27,7 @@
           </tr>
           <tr>
             <td>Departure date</td>
-            <td class="departure-date">22/10/2017</td>
+            <td class="departure-date">{{ data['plane-date-of-departure-day'] }}/{{ data['plane-date-of-departure-month'] }}/{{ data['plane-date-of-departure-year'] }}</td>
             <td lang="ar">تاريخ المغادرة</td>
           </tr>
           <tr>
@@ -42,7 +42,7 @@
           </tr>
           <tr>
             <td>Arrival date</td>
-            <td class="arrival-date">22/10/2017</td>
+            <td class="arrival-date">{{ data['plane-date-of-departure-day'] }}/{{ data['plane-date-of-departure-month'] }}/{{ data['plane-date-of-departure-year'] }}</td>
             <td lang="ar">تاريخ الوصول</td>
           </tr>
           <tr>

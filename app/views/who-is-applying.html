@@ -14,7 +14,7 @@
           <h1 class="heading-large"><span lang="en">Applying for someone else</span><span lang="ar">التقدم نيابة عن شخص آخر</span></h1>
         </header>
 
-        <form action="apply-for-minor" method="POST"  autocomplete="off" novalidate="true" spellcheck="false">
+        <form action="/whoisapplying" method="post" class="form">
 
         <div id="applying-for-other-group" class="form-group form-group">
           <div role="" aria-required="true">
@@ -22,24 +22,13 @@
               <span><span lang="en">Are you applying for this electronic visa waiver for someone else?</span><span lang="ar">هل تقدم طلب الإعفاء الإلكتروني من التأشيرة نيابة عن شخص آخر؟</span></span>
             </legend>
             <div class="multiple-choice">
-              <input
-                type="radio"
-                name="applying-for-other"
-                id="applying-for-other-Yes"
-                value="Yes"
-                required="true"
-                 data-toggle="applicant-container">
+              <input type="radio" name="whoisapplying" id="yes" value="yes">
               <label for="applying-for-other-Yes">
                 <span lang="en">Yes</span><span lang="ar">نعم</span>
               </label>
             </div>
             <div class="multiple-choice">
-              <input
-                type="radio"
-                name="applying-for-other"
-                id="applying-for-other-No"
-                value="No"
-                required="true">
+              <input type="radio" name="whoisapplying" id="no" value="no">
               <label for="applying-for-other-No">
                 <span lang="en">No</span><span lang="ar">لا</span>
               </label>

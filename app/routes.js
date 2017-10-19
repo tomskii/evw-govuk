@@ -17,43 +17,16 @@ router.get('/checkbox', function (req, res) {
   }
 })
 
-  router.get('/passport-nationality', function (req, res) {
-    //var passportnationality = req.query.passportnationality
-    var nationality = req.session.data['british-citizen']
-  if (nationality == 'No') {
-     res.redirect('/faster-entry/apply/ineligible')
-   } else {
-     res.render('faster-entry/apply/choice')
-     }
+
+  // Branching
+
+  router.get('/whoisapplying', function (req, res) {
+    var whoisapplying = req.query.whoisapplying
+    if (whoisapplying === 'yes') {
+      res.redirect('/apply-for-minor')
+    } else {
+      res.render('check-your-answers')
+    }
   })
-
-  router.get('/convictions', function (req, res) {
-    var convictions = req.session.data['convictions']
-  if (convictions == 'No') {
-     res.redirect('/faster-entry/apply/restrictions')
-   } else {
-     res.render('faster-entry/apply/convictions-more-than-one')
-     }
-  })
-
-  router.get('/convictions-more', function (req, res) {
-    var convictionsmore = req.session.data['convictionsmore']
-  if (convictionsmore == 'No') {
-     res.redirect('/faster-entry/apply/convictions-ten-years')
-   } else {
-     res.render('faster-entry/apply/ineligible-convictions')
-     }
-  })
-
-  router.get('/convictions-ten', function (req, res) {
-    var convictionsten = req.session.data['convictionsten']
-  if (convictionsten == 'No') {
-     res.redirect('/faster-entry/apply/convictions-warning')
-   } else {
-     res.render('faster-entry/apply/ineligible-convictions')
-     }
-  })
-
-
 
 module.exports = router

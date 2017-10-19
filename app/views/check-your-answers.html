@@ -1,0 +1,336 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+        <div class="column-full">
+          <form action="/apply/check-your-answers" method="POST"  autocomplete="off" novalidate="true" spellcheck="false">
+
+<h1 class='heading-large'><span lang="en">Check your answers</span><span lang="ar">راجع إجاباتك</span></h1>
+<p class="icon-important"><span lang="en">You will be turned away at the airport or UK border if your answers do not exactly match your passport or travel details.</span><span lang="ar">سيتم رفضك إما بالمطار أو عند حدود المملكة المتحدة إذا لم تتطابق إجاباتك بالضبط مع معلومات جواز سفرك أو الرحلة.</span></p>
+
+<table id="summary" class="table-details">
+  <thead></thead>
+  <tbody>
+
+    <tr>
+        <td class="nationality-name"><span lang="en">Nationality</span><span lang="ar">الجنسية</span></td>
+        <td class="nationality-value">{{ data['nationality'] }}</td>
+      <td class="summary-change">
+        <a id="nationality-change" href="/apply/nationality/edit#nationality" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="passport-image-name"><span lang="en">Passport upload</span><span lang="ar">تحميل جواز السفر</span></td>
+        <td class="passport-image-value"><img src="" class="passport-image" alt="Passport image"></td>
+      <td class="summary-change">
+        <a id="passport-image-change" href="/apply/upload-passport-image/edit#passport-image" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="passport-number-name"><span lang="en">Passport number</span><span lang="ar">رقم جواز السفر</span></td>
+        <td class="passport-number-value">{{ data['passportnumber'] }}</td>
+      <td class="summary-change">
+        <a id="passport-number-change" href="/apply/passport-details/edit#passport-number" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="passport-issue-date-name"><span lang="en">Issue date</span><span lang="ar">تاريخ الإصدار</span></td>
+        <td class="passport-issue-date-value">{{ data['passport-issue-date-day'] }}/{{ data['passport-issue-date-month'] }}/{{ data['passport-issue-date-year'] }}</td>
+      <td class="summary-change">
+        <a id="passport-issue-date-change" href="/apply/passport-details/edit#passport-issue-date" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="passport-expiry-date-name"><span lang="en">Expiry date</span><span lang="ar">تاريخ الإنتهاء</span></td>
+        <td class="passport-expiry-date-value">{{ data['passport-expiry-date-day'] }}/{{ data['passport-expiry-date-month'] }}/{{ data['passport-expiry-date-year'] }}</td>
+      <td class="summary-change">
+        <a id="passport-expiry-date-change" href="/apply/passport-details/edit#passport-expiry-date" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="passport-issue-place-name"><span lang="en">Place of issue</span><span lang="ar">مكان الإصدار</span></td>
+        <td class="passport-issue-place-value">{{ data['passport-issue-place'] }}</td>
+      <td class="summary-change">
+        <a id="passport-issue-place-change" href="/apply/passport-details/edit#passport-issue-place" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="country-of-birth-name"><span lang="en">Country of birth</span><span lang="ar">دولة الولادة</span></td>
+        <td class="country-of-birth-value">{{ data['country-selector'] }}</td>
+      <td class="summary-change">
+        <a id="country-of-birth-change" href="/apply/passport-details/edit#country-of-birth" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="place-of-birth-name"><span lang="en">Place of birth</span><span lang="ar">مكان الولادة</span></td>
+        <td class="place-of-birth-value">{{ data['place-of-birth'] }}</td>
+      <td class="summary-change">
+        <a id="place-of-birth-change" href="/apply/your-personal-details/edit#place-of-birth" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="check-name-name"><span lang="en">Name</span><span lang="ar">اسمك</span></td>
+        <td class="check-name-value">{{ data['check-name'] }}</td>
+      <td class="summary-change">
+        <a id="check-name-change" href="/apply/check-your-name/edit#check-name" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="other-names-name"><span lang="en">Other names</span><span lang="ar">أية أسماء أخرى</span></td>
+        <td class="other-names-value">{{ data['anyOtherNames'] }} {{ data['other-names'] }}</td>
+      <td class="summary-change">
+        <a id="other-names-change" href="/apply/your-personal-details/edit#other-names" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="gender-name"><span lang="en">Gender</span><span lang="ar">ما جنسك</span></td>
+        <td class="gender-value">{{ data['gender'] }}</td>
+      <td class="summary-change">
+        <a id="gender-change" href="/apply/your-personal-details/edit#gender" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="date-of-birth-name"><span lang="en">Date of birth</span><span lang="ar">تاريخ الولادة</span></td>
+        <td class="date-of-birth-value">{{ data['date-of-birth-day'] }}/{{ data['date-of-birth-month'] }}/{{ data['date-of-birth-year'] }}</td>
+      <td class="summary-change">
+        <a id="date-of-birth-change" href="/apply/your-personal-details/edit#date-of-birth" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="have-other-nationalities-name"><span lang="en">Other nationalities</span><span lang="ar">أكد إذا كنت تحمل جنسيات أخرى</span></td>
+        <td class="have-other-nationalities-value">{{ data['other-nationalities'] }} {{ data['have-other-nationalities'] }}</td>
+      <td class="summary-change">
+        <a id="have-other-nationalities-change" href="/apply/other-nationalities/edit#have-other-nationalities" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="had-previous-nationalities-name"><span lang="en">Past nationalities</span><span lang="ar">الجنسيات السابقة</span></td>
+        <td class="had-previous-nationalities-value">{{ data['previous-nationalities'] }} {{ data['had-previous-nationalities'] }}</td>
+      <td class="summary-change">
+        <a id="had-previous-nationalities-change" href="/apply/other-nationalities/edit#had-previous-nationalities" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="mode-of-transport-name"><span lang="en">Method of travel</span><span lang="ar">وسيلة السفر</span></td>
+        <td class="mode-of-transport-value">{{ data['mode-of-transport'] }}</td>
+      <td class="summary-change">
+        <a id="mode-of-transport-change" href="/apply/how-will-you-arrive/edit#mode-of-transport" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="plane-flight-number-name"><span lang="en">Flight number</span><span lang="ar">طريقة السفر</span></td>
+        <td class="plane-flight-number-value">{{ data['plane-flight-number'] }}</td>
+      <td class="summary-change">
+        <a id="plane-flight-number-change" href="/apply/what-is-your-flight-number/edit#plane-flight-number" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="plane-date-of-departure-name"><span lang="en">Date of travel</span><span lang="ar">تاريخ السفر</span></td>
+        <td class="plane-date-of-departure-value">{{ data['plane-date-of-departure-day'] }}/{{ data['plane-date-of-departure-month'] }}/{{ data['plane-date-of-departure-year'] }}</td>
+      <td class="summary-change">
+        <a id="plane-date-of-departure-change" href="/apply/date-of-departure/edit#plane-date-of-departure" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="plane-time-of-departure-name"><span lang="en">Time of travel</span><span lang="ar">وقت السفر</span></td>
+        <td class="plane-time-of-departure-value">14:55</td>
+      <td class="summary-change">
+        <a id="plane-time-of-departure-change" href="/apply/what-is-your-flight-number/edit#plane-time-of-departure" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="plane-country-of-departure-name"><span lang="en">Departure country</span><span lang="ar">دولة المغادرة</span></td>
+        <td class="plane-country-of-departure-value">United Arab Emirates</td>
+      <td class="summary-change">
+        <a id="plane-country-of-departure-change" href="/apply/what-is-your-flight-number/edit#plane-country-of-departure" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="plane-port-of-departure-name"><span lang="en">Departure airport</span><span lang="ar">مطار المغادرة</span></td>
+        <td class="plane-port-of-departure-value">Dubai Airport</td>
+      <td class="summary-change">
+        <a id="plane-port-of-departure-change" href="/apply/what-is-your-flight-number/edit#plane-port-of-departure" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="plane-port-of-arrival-name"><span lang="en">Arrival airport</span><span lang="ar">مطار الوصول</span></td>
+        <td class="plane-port-of-arrival-value">London Gatwick</td>
+      <td class="summary-change">
+        <a id="plane-port-of-arrival-change" href="/apply/what-is-your-flight-number/edit#plane-port-of-arrival" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="plane-date-of-arrival-name"><span lang="en">Date of arrival</span><span lang="ar">تاريخ الوصول</span></td>
+        <td class="plane-date-of-arrival-value">{{ data['plane-date-of-departure-day'] }}/{{ data['plane-date-of-departure-month'] }}/{{ data['plane-date-of-departure-year'] }}</td>
+      <td class="summary-change">
+        <a id="plane-date-of-arrival-change" href="/apply/what-is-your-flight-number/edit#plane-date-of-arrival" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="plane-time-of-arrival-name"><span lang="en">Time of arrival</span><span lang="ar">وقت الوصول</span></td>
+        <td class="plane-time-of-arrival-value">19:45</td>
+      <td class="summary-change">
+        <a id="plane-time-of-arrival-change" href="/apply/what-is-your-flight-number/edit#plane-time-of-arrival" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="reason-for-visit-name"><span lang="en">Reason for visiting</span><span lang="ar">سبب الزيارة</span></td>
+        <td class="reason-for-visit-value">{{ data['reason-for-visit'] }} {{ data['other-reason-for-visit'] }}</td>
+      <td class="summary-change">
+        <a id="reason-for-visit-change" href="/apply/reason-for-visit/edit#reason-for-visit" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="travelling-with-others-name"><span lang="en">Other travellers in group</span><span lang="ar">المسافرين الآخرين بالمجموعة</span></td>
+        <td class="travelling-with-others-value">{{ data['travelling-with-others'] }} {{ data['other-travellers'] }}</td>
+      <td class="summary-change">
+        <a id="travelling-with-others-change" href="/apply/reason-for-visit/edit#travelling-with-others" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="uk-address-1-name"><span lang="en">UK address</span><span lang="ar">العنوان بالمملكة المتحدة</span></td>
+        <td class="uk-address-1-value">Adipisci quas magna excepteur est e
+Velit praesentium consequatur ratio
+Quis quo et aliquid sunt
+Dolor in molestias voluptas qui vol
+se1 0jp</td>
+      <td class="summary-change">
+        <a id="uk-address-1-change" href="/apply/visit-information/edit#uk-address-1" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="uk-phone-name"><span lang="en">Contact phone number in the UK</span><span lang="ar">رقم هاتف التواصل معك بالمملكة المتحدة</span></td>
+        <td class="uk-phone-value">+372-41-4711401</td>
+      <td class="summary-change">
+        <a id="uk-phone-change" href="/apply/visit-information/edit#uk-phone" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="know-departure-details-name"><span lang="en">Return travel details known</span><span lang="ar">هل تعرف معلومات العودة؟</span></td>
+        <td class="know-departure-details-value">No</td>
+      <td class="summary-change">
+        <a id="know-departure-details-change" href="/apply/visit-information/edit#know-departure-details" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="uk-visit-more-than-once-name"><span lang="en">Further trips to UK planned within 3 months</span><span lang="ar">هل تعتزم إجراء أكثر من زيارة للمملكة المتحدة ضمن الثلاث الأشهر المقبلة؟</span></td>
+        <td class="uk-visit-more-than-once-value">No</td>
+      <td class="summary-change">
+        <a id="uk-visit-more-than-once-change" href="/apply/visit-information/edit#uk-visit-more-than-once" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="uk-departure-travel-number-name"><span lang="en">Flight number, boat name, or train number</span><span lang="ar">أدخل رقم رحلة الطيران أو القطار أو السفينة التي ستغادر بها المملكة المتحدة.</span></td>
+        <td class="uk-departure-travel-number-value">Illiana Howe</td>
+      <td class="summary-change">
+        <a id="uk-departure-travel-number-change" href="/apply/visit-information/edit#uk-departure-travel-number" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="uk-duration-name"><span lang="en">Length of stay</span><span lang="ar">مدة الزيارة</span></td>
+        <td class="uk-duration-value">Less than 1 month</td>
+      <td class="summary-change">
+        <a id="uk-duration-change" href="/apply/visit-information/edit#uk-duration" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="country-applied-from-name"><span lang="en">EVW completed in</span><span lang="ar">في أي دولة تم إكمال نموذج طلب الإعفاء الإلكتروني من التأشيرة؟</span></td>
+        <td class="country-applied-from-value">Kuwait</td>
+      <td class="summary-change">
+        <a id="country-applied-from-change" href="/apply/contact-details/edit#country-applied-from" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="home-address-1-name"><span lang="en">Home address</span><span lang="ar">أدخل عنوان سكنك الرئيسي</span></td>
+        <td class="home-address-1-value">Inventore tenetur et inventore fugi
+Iste quas consequat Vel esse veli
+Esse voluptatem fuga Ut voluptatum
+Veniam dolor in quos nostrud
+34313
+Kuwait</td>
+      <td class="summary-change">
+        <a id="home-address-1-change" href="/apply/contact-details/edit#home-address-1" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="home-phone-name"><span lang="en">Phone number</span><span lang="ar">رقم الهاتف</span></td>
+        <td class="home-phone-value">+966-12-8713085</td>
+      <td class="summary-change">
+        <a id="home-phone-change" href="/apply/contact-details/edit#home-phone" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="mobile-name"><span lang="en">Mobile number</span><span lang="ar">رقم الهاتف الجوال</span></td>
+        <td class="mobile-value">+582-32-7896082</td>
+      <td class="summary-change">
+        <a id="mobile-change" href="/apply/contact-details/edit#mobile" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="email-name"><span lang="en">Email address</span><span lang="ar">البريد الإلكتروني</span></td>
+        <td class="email-value">lotipehemy@gmail.com</td>
+      <td class="summary-change">
+        <a id="email-change" href="/apply/contact-details/edit#email" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="other-email-name"><span lang="en">Other email address</span><span lang="ar">أرسل نسخة لعنوان بريد إلكتروني آخر</span></td>
+        <td class="other-email-value">gamosul@gmail.com</td>
+      <td class="summary-change">
+        <a id="other-email-change" href="/apply/contact-details/edit#other-email" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="employed-name"><span lang="en">Employed</span><span lang="ar">هل أنت موظف</span></td>
+        <td class="employed-value">No</td>
+      <td class="summary-change">
+        <a id="employed-change" href="/apply/contact-details/edit#employed" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="applying-for-minor-name"><span lang="en">Applying for someone under 18</span><span lang="ar">هل تتقدم نيابة عن شخص تحت سن 18</span></td>
+        <td class="applying-for-minor-value">Yes</td>
+      <td class="summary-change">
+        <a id="applying-for-minor-change" href="/apply/applying-for-minor/edit#applying-for-minor" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="applying-for-other-name"><span lang="en">Applying for someone else</span><span lang="ar">التقدم نيابة عن شخص آخر</span></td>
+        <td class="applying-for-other-value">Yes</td>
+      <td class="summary-change">
+        <a id="applying-for-other-change" href="/apply/who-is-applying/edit#applying-for-other" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="applicant-email-address-name"><span lang="en">Completer's email</span><span lang="ar">البريد الإلكتروني</span></td>
+        <td class="applicant-email-address-value">tytyxusisy@gmail.com</td>
+      <td class="summary-change">
+        <a id="applicant-email-address-change" href="/apply/applying-for-someone-else/edit#applicant-email-address" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <tr>
+        <td class="applicant-contact-details-name"><span lang="en">Completer's name and address</span><span lang="ar">الاسم والعنوان</span></td>
+        <td class="applicant-contact-details-value">Aliquid quia voluptatum et sit ea dignissimos aliquid at omnis ea</td>
+      <td class="summary-change">
+        <a id="applicant-contact-details-change" href="/apply/applying-for-someone-else/edit#applicant-contact-details" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+<button class="button" id="continue"><span lang="en">Continue</span><span lang="ar">استمر</span></button>
+</form>
+
+</div>
+</div>
+</main>
+
+{% endblock %}
