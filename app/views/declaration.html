@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+        <div class="column-full">
+          <h1 class='heading-large'>Declaration</h1>
+        <p class="icon-important"></p>
+
+        <p class="split-spans"><span lang="en">I confirm that:</span><span lang="ar">أؤكد:</span></p>
+        <div class="column-half" lang="en">
+          <ul class="list-bullet">
+            <li>The information on my electronic visa waiver (EVW) form is correct to the best of my knowledge and belief.</li>
+            <li>If I have completed this form for someone else I have their full agreement.</li>
+            <li>I have read, understood and accept the electronic visa waiver <a href="/terms-and-conditions" target="_blank" rel="external">terms and conditions</a> and <a href="/privacy-policy" target="_blank" rel="external">privacy policy</a>.</li>
+          </ul>
+        </div>
+        <div class="column-half" lang="ar">
+          <ul class="list-bullet">
+            <li>أن المعلومات في نموذج طلب الإعفاء الإلكتروني من التأشيرة صحيحة حسب حسن معرفتي واعتقادي.</li>
+            <li>إذا أكملت الطلب هذا نيابة عن شخص آخر، فقد حصلت على موافقته.</li>
+            <li>لقد قرأت وفهمت وقبلت <a href='/terms-and-conditions' target='_blank'>بشروط وأحكام</a> الإعفاء الإلكتروني من التأشيرة <a href='/privacy-policy' target='_blank'>وسياسة الخصوصية</a>.</li>
+          </ul>
+        </div>
+
+        <p class="split-spans"><span lang="en">I understand that:</span><span lang="ar">أفهم:</span></p>
+        <div class="column-half" lang="en">
+          <ul class="list-bullet">
+            <li>I won't be able to travel if my EVW does not match my passport or actual travel details.</li>
+            <li>Any changes to my EVW must be made at least 48 hours before travelling.</li>
+            <li>An EVW is for a single entry visit to the UK for up to 6 months for tourism, study, medical care or business only, and that it only covers the person named on it.</li>
+          </ul>
+        </div>
+        <div class="column-half" lang="ar">
+          <ul class="list-bullet">
+            <li>أنني لن استطيع أن أسافر إذا لم تتطابق معلومات الإعفاء الإلكتروني من التأشيرة مع المعلومات في جواز سفري أو معلومات السفر.</li>
+            <li>أنه يجب أن يتم أي تغيير للإعفاء الإلكتروني من التأشيرة بمدة لا تقل عن 48 ساعة قبل موعد السفر.</li>
+            <li>يصلح الإعفاء الإلكتروني من التأشيرة لزيارة فردية للمملكة المتحدة فقط ولمدة أقصاها 6 شهور لغرض الإجازة أو الدارسة أو العناية الطبية أو العمل، ويقتصر فقط على الشخص المسمى به.</li>
+          </ul>
+        </div>
+
+        <form action="card-details" method="POST"  autocomplete="off" novalidate="true" spellcheck="false">
+<div id="declaration-group" class="form-group">
+
+  <div class="multiple-choice">
+    <input type="checkbox" id="declaration" name="declaration" value="true" aria-required="false">
+    <label for="declaration" class="block-label selection-button-checkbox declaration-checkbox block-label">
+      <span lang="en">I understand and agree with the above</span><span lang="ar">أفهم وأوافق مع ما ذكر أعلاه</span>
+
+    </label>
+  </div>
+</div>
+<button class="button" id="continue"><span lang="en">Continue</span><span lang="ar">استمر</span></button>
+
+</form>
+
+</div>
+</div>
+</main>
+
+{% endblock %}

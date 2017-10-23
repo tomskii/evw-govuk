@@ -10,7 +10,7 @@
 {% include "includes/phase_banner_beta.html" %}
   <div class="grid-row">
         <div class="column-full">
-          <form action="/apply/check-your-answers" method="POST"  autocomplete="off" novalidate="true" spellcheck="false">
+          <form action="declaration" method="POST"  autocomplete="off" novalidate="true" spellcheck="false">
 
 <h1 class='heading-large'><span lang="en">Check your answers</span><span lang="ar">راجع إجاباتك</span></h1>
 <p class="icon-important"><span lang="en">You will be turned away at the airport or UK border if your answers do not exactly match your passport or travel details.</span><span lang="ar">سيتم رفضك إما بالمطار أو عند حدود المملكة المتحدة إذا لم تتطابق إجاباتك بالضبط مع معلومات جواز سفرك أو الرحلة.</span></p>
@@ -28,7 +28,7 @@
     </tr>
     <tr>
         <td class="passport-image-name"><span lang="en">Passport upload</span><span lang="ar">تحميل جواز السفر</span></td>
-        <td class="passport-image-value"><img src="" class="passport-image" alt="Passport image"></td>
+        <td class="passport-image-value"><img src="https://www.electronic-visa-waiver.service.gov.uk/public/images/sample-passports/omn.jpg" class="passport-image" alt="Passport image" width="200"></td>
       <td class="summary-change">
         <a id="passport-image-change" href="/apply/upload-passport-image/edit#passport-image" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
       </td>
@@ -196,118 +196,110 @@
     </tr>
     <tr>
         <td class="uk-address-1-name"><span lang="en">UK address</span><span lang="ar">العنوان بالمملكة المتحدة</span></td>
-        <td class="uk-address-1-value">Adipisci quas magna excepteur est e
-Velit praesentium consequatur ratio
-Quis quo et aliquid sunt
-Dolor in molestias voluptas qui vol
-se1 0jp</td>
+        <td class="uk-address-1-value">{{ data['uk-address-1'] }}<br>{{ data['uk-address-2'] }}<br>{{ data['uk-address-3'] }}<br>{{ data['uk-address-4'] }}<br>{{ data['uk-postcode'] }}</td>
       <td class="summary-change">
         <a id="uk-address-1-change" href="/apply/visit-information/edit#uk-address-1" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
       </td>
     </tr>
     <tr>
         <td class="uk-phone-name"><span lang="en">Contact phone number in the UK</span><span lang="ar">رقم هاتف التواصل معك بالمملكة المتحدة</span></td>
-        <td class="uk-phone-value">+372-41-4711401</td>
+        <td class="uk-phone-value">{{ data['uk-phone'] }}</td>
       <td class="summary-change">
         <a id="uk-phone-change" href="/apply/visit-information/edit#uk-phone" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
       </td>
     </tr>
     <tr>
         <td class="know-departure-details-name"><span lang="en">Return travel details known</span><span lang="ar">هل تعرف معلومات العودة؟</span></td>
-        <td class="know-departure-details-value">No</td>
+        <td class="know-departure-details-value">{{ data['know-departure-details'] }}</td>
       <td class="summary-change">
         <a id="know-departure-details-change" href="/apply/visit-information/edit#know-departure-details" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
       </td>
     </tr>
     <tr>
         <td class="uk-visit-more-than-once-name"><span lang="en">Further trips to UK planned within 3 months</span><span lang="ar">هل تعتزم إجراء أكثر من زيارة للمملكة المتحدة ضمن الثلاث الأشهر المقبلة؟</span></td>
-        <td class="uk-visit-more-than-once-value">No</td>
+        <td class="uk-visit-more-than-once-value">{{ data['uk-visit-more-than-once'] }}</td>
       <td class="summary-change">
         <a id="uk-visit-more-than-once-change" href="/apply/visit-information/edit#uk-visit-more-than-once" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
       </td>
     </tr>
     <tr>
         <td class="uk-departure-travel-number-name"><span lang="en">Flight number, boat name, or train number</span><span lang="ar">أدخل رقم رحلة الطيران أو القطار أو السفينة التي ستغادر بها المملكة المتحدة.</span></td>
-        <td class="uk-departure-travel-number-value">Illiana Howe</td>
+        <td class="uk-departure-travel-number-value">{{ data['plane-flight-number'] }}</td>
       <td class="summary-change">
         <a id="uk-departure-travel-number-change" href="/apply/visit-information/edit#uk-departure-travel-number" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
       </td>
     </tr>
     <tr>
         <td class="uk-duration-name"><span lang="en">Length of stay</span><span lang="ar">مدة الزيارة</span></td>
-        <td class="uk-duration-value">Less than 1 month</td>
+        <td class="uk-duration-value">{{ data['uk-duration'] }}</td>
       <td class="summary-change">
         <a id="uk-duration-change" href="/apply/visit-information/edit#uk-duration" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
       </td>
     </tr>
     <tr>
         <td class="country-applied-from-name"><span lang="en">EVW completed in</span><span lang="ar">في أي دولة تم إكمال نموذج طلب الإعفاء الإلكتروني من التأشيرة؟</span></td>
-        <td class="country-applied-from-value">Kuwait</td>
+        <td class="country-applied-from-value">{{ data['country-completed'] }}</td>
       <td class="summary-change">
         <a id="country-applied-from-change" href="/apply/contact-details/edit#country-applied-from" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
       </td>
     </tr>
     <tr>
         <td class="home-address-1-name"><span lang="en">Home address</span><span lang="ar">أدخل عنوان سكنك الرئيسي</span></td>
-        <td class="home-address-1-value">Inventore tenetur et inventore fugi
-Iste quas consequat Vel esse veli
-Esse voluptatem fuga Ut voluptatum
-Veniam dolor in quos nostrud
-34313
-Kuwait</td>
+        <td class="home-address-1-value">{{ data['home-address-1'] }}<br>{{ data['home-address-2'] }}<br>{{ data['home-address-3'] }}<br>{{ data['home-address-4'] }}<br>{{ data['home-postcode'] }}<br>{{ data['home-country'] }}</td>
       <td class="summary-change">
         <a id="home-address-1-change" href="/apply/contact-details/edit#home-address-1" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
       </td>
     </tr>
     <tr>
         <td class="home-phone-name"><span lang="en">Phone number</span><span lang="ar">رقم الهاتف</span></td>
-        <td class="home-phone-value">+966-12-8713085</td>
+        <td class="home-phone-value">{{ data['home-phone'] }}</td>
       <td class="summary-change">
         <a id="home-phone-change" href="/apply/contact-details/edit#home-phone" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
       </td>
     </tr>
     <tr>
         <td class="mobile-name"><span lang="en">Mobile number</span><span lang="ar">رقم الهاتف الجوال</span></td>
-        <td class="mobile-value">+582-32-7896082</td>
+        <td class="mobile-value">{{ data['mobile'] }}</td>
       <td class="summary-change">
         <a id="mobile-change" href="/apply/contact-details/edit#mobile" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
       </td>
     </tr>
     <tr>
         <td class="email-name"><span lang="en">Email address</span><span lang="ar">البريد الإلكتروني</span></td>
-        <td class="email-value">lotipehemy@gmail.com</td>
+        <td class="email-value">{{ data['email1-checked'] }}</td>
       <td class="summary-change">
         <a id="email-change" href="/apply/contact-details/edit#email" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
       </td>
     </tr>
     <tr>
         <td class="other-email-name"><span lang="en">Other email address</span><span lang="ar">أرسل نسخة لعنوان بريد إلكتروني آخر</span></td>
-        <td class="other-email-value">gamosul@gmail.com</td>
+        <td class="other-email-value">{{ data['email2-checked'] }}</td>
       <td class="summary-change">
         <a id="other-email-change" href="/apply/contact-details/edit#other-email" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
       </td>
     </tr>
     <tr>
         <td class="employed-name"><span lang="en">Employed</span><span lang="ar">هل أنت موظف</span></td>
-        <td class="employed-value">No</td>
+        <td class="employed-value">{{ data['employed'] }} {{ data['employer-company'] }}</td>
       <td class="summary-change">
         <a id="employed-change" href="/apply/contact-details/edit#employed" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
       </td>
     </tr>
     <tr>
+        <td class="applying-for-other-name"><span lang="en">Applying for someone else</span><span lang="ar">التقدم نيابة عن شخص آخر</span></td>
+        <td class="applying-for-other-value">{{ data['whoisapplying'] }}</td>
+      <td class="summary-change">
+        <a id="applying-for-other-change" href="/apply/who-is-applying/edit#applying-for-other" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
+      </td>
+    </tr>
+    <!--<tr>
         <td class="applying-for-minor-name"><span lang="en">Applying for someone under 18</span><span lang="ar">هل تتقدم نيابة عن شخص تحت سن 18</span></td>
         <td class="applying-for-minor-value">Yes</td>
       <td class="summary-change">
         <a id="applying-for-minor-change" href="/apply/applying-for-minor/edit#applying-for-minor" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
       </td>
     </tr>
-    <tr>
-        <td class="applying-for-other-name"><span lang="en">Applying for someone else</span><span lang="ar">التقدم نيابة عن شخص آخر</span></td>
-        <td class="applying-for-other-value">Yes</td>
-      <td class="summary-change">
-        <a id="applying-for-other-change" href="/apply/who-is-applying/edit#applying-for-other" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
-      </td>
-    </tr>
+
     <tr>
         <td class="applicant-email-address-name"><span lang="en">Completer's email</span><span lang="ar">البريد الإلكتروني</span></td>
         <td class="applicant-email-address-value">tytyxusisy@gmail.com</td>
@@ -321,7 +313,7 @@ Kuwait</td>
       <td class="summary-change">
         <a id="applicant-contact-details-change" href="/apply/applying-for-someone-else/edit#applicant-contact-details" class="button"><span lang="en">Edit</span><span lang="ar">تغيير</span></a>
       </td>
-    </tr>
+    </tr>-->
 
   </tbody>
 </table>
