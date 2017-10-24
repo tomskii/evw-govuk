@@ -1572,17 +1572,17 @@ input[type=number] {
   background-color: #28a197;
   padding: 2em;
   color: #fff;
+  margin-top: 1em;
   text-align: center; }
   .header-notice-complete h1 {
     margin-top: 0;
-    text-align: center;
+    text-align: left;
     font-size: 1.7em; }
-    .header-notice-complete h1 span {
-      max-width: 100%;
-      clear: both;
-      float: none;
-      display: block;
-      margin: 0 auto .4em auto; }
+
+    .header-notice-complete h1 [lang="ar"] {
+      text-align: right;
+}
+
   .header-notice-complete p {
     margin: 0;
     font-family: "nta", Arial, sans-serif;
@@ -1590,10 +1590,11 @@ input[type=number] {
     text-transform: none;
     font-size: 16px;
     line-height: 1.25; }
-    .header-notice-complete p span {
-      float: none;
-      display: block;
-      margin: 0 auto; }
+
+    .header-notice-complete p [lang="en"] {
+      margin-right: 60px;
+      }
+
     @media (min-width: 641px) {
       .header-notice-complete p {
         font-size: 19px;
