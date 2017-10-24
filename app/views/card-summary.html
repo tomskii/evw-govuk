@@ -6,7 +6,7 @@
 
 {% block content %}
 <main id="content" role="main" class="content-wrapper">
-
+<form action="confirmation" method="post" class="form payment">
 <div class="grid-row">
   <div class="column-two-thirds">
 
@@ -20,7 +20,7 @@
         </tr>
         <tr>
             <td>Card brand:</td>
-            <td id="card-brand" class="details">{{ data['brand'] }}</td>
+            <td id="card-brand" class="details">Visa</td>
         </tr>
         <tr>
             <td>Expiry date:</td>
@@ -31,16 +31,16 @@
             <td id="cardholder-name" class="details">{{ data['cardname'] }}</td>
         </tr>
         <tr>
-            <td>Billing address:</td>
+            <td class="billing" valign="top">Billing address:</td>
             <td id="address" class="details">{{ data['building'] }}, {{ data['building2'] }}, {{ data['town'] }}, {{ data['postcode'] }}</td>
         </tr>
         <tr>
             <td>Payment for:</td>
-            <td id="payment-description" class="details">Apply for UK background checks for {{ data['service'] }}</td>
+            <td id="payment-description" class="details">Electronic visa waiver</td>
         </tr>
         <tr>
             <td>Total amount:</td>
-            <td id="amount" class="details">£42.00</td>
+            <td id="amount" class="details">£15.00</td>
         </tr>
         <tr>
             <td>Confirmation email:</td>
