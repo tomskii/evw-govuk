@@ -1267,6 +1267,12 @@ textarea.form-control {
     .form-control-1-8 {
       width: 12.5%; } }
 
+.form-control.postcode-form {
+  width: 100%; }
+  @media (min-width: 641px) {
+    .form-control.postcode-form {
+      width: 20%; } }
+
 option:active,
 option:checked,
 select:focus::-ms-value {
